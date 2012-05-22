@@ -1,0 +1,56 @@
+/* ------ general
+-----------------------------------------------*/
+
+body {
+font-family:Arial, Helvetica, sans-serif;
+background:url(../img/grid.jpg) repeat;
+font-size:11px;
+}
+
+.wrapper {
+margin:0 auto;
+width:1200px;
+position:relative;
+}
+
+#map {
+float:left;
+clear:both;
+width:1200px;
+height:820px;
+}
+
+.point {
+position:absolute;
+display:none;
+padding:10px 15px;
+background:#7BB9F0;
+font-size:14px;
+font-weight:bold;
+-moz-border-radius:8px;
+-webkit-box-shadow:  2px 2px 10px 1px rgba(80, 80, 80, 1);        
+box-shadow:  2px 2px 10px 1px rgba(80, 80, 80, 1);
+        
+}
+
+.point .close {
+display:block;
+position:absolute;
+top:-10px;
+right:-10px;
+width:24px;
+height:24px;
+text-indent:-9999px;
+outline:none;
+background:url(../img/close.png) no-repeat;
+}
+
+.point img {
+vertical-align:middle;
+margin-right:10px;
+}
+
+a img {
+border:none;
+}
+
