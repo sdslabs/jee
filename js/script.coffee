@@ -37,8 +37,18 @@ requirejs(['jquery','d3','crossfilter','text!../data/center.csv'],($,d3=window.d
     city = Candidate.dimension (d)->
       return d.center
     cities = city.group()
-    console.log marks.size()
-  
+    #JQuery Event Handling for searching 
+    $(document).ready ->
+      $("#q").change (e) ->
+        if @value.length >= 3
+          val = @value
+          $.get "index/" + val.substr(0, 2).toUpperCase() + ".json", (data) ->
+            registrationNumbers = data[val.toUpperCase()]
+            choose=(c)->
+              return registrationNumbers.indexOf(c.reg)>-1
+            rows=(c for c in Results when choose c)
+            console.log rows
+
   #Handle the Center codes similarly
   
   #This is the main csv parser for results
@@ -83,28 +93,4 @@ requirejs(['jquery','d3','crossfilter','text!../data/center.csv'],($,d3=window.d
     console.log new Date() - testStart
     #Update marker
     @marker = users.length-1;
-
-  #JQuery Event Handling for searching 
-  #@remove
-  $(document).ready ->
-    $("#q").change (e) ->
-      if @value.length >= 3
-        val = @value
-        $.get "index/" + val.substr(0, 2).toUpperCase() + ".json", (data) ->
-          console.log data[val.toUpperCase()]
-  #Make the ajax request for results
-  #and pipe it to csvToHTML function
-  myxhr = new XMLHttpRequest()
-  myxhr.open "GET", "js/data/results.csv"
-  myxhr.onreadystatechange = ->
-    csvToHTML @responseText
-    console.log(@readyState)
-    localStorage.setItem('results',@responseText) if @readyState==4
-
-  ##Prefetch from localStorage :D
-  results = localStorage.getItem 'results'
-  if results 
-    ;#csvToHTML results,true
-  else
-    myxhr.send null
 )

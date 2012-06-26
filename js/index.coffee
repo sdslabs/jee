@@ -10,10 +10,11 @@ for line in require('fs').readFileSync('../data/results.csv').toString().split('
   
   continue unless line.length #This is for the final newline inserted by every editor
   [CML_Rank,regNo,Category,Category_rank, PD_Rank,name] = line.split(",")
+  regNo = parseInt(regNo)
   for str in name.split(' ')
     for searchString in getSubStrings(str,3)
       if index[searchString]
-        index[searchString].push regNo 
+        index[searchString].push regNo
       else
         index[searchString] = [regNo]
 
