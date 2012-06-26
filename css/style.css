@@ -89,10 +89,8 @@ a.FBConnectButton_RTL_Small:active{background-position:right -458px}
 	background: white;
 	box-shadow: 0 0 10px 2px #333;
 	border-top: none;
-	padding-top: 10px;
-	margin-top: none;
-	margin: 20px 5%;
-	height: 100%;
+	padding: 10px 20px 30px 20px;
+	margin: 20px 3%;
 	text-align:center;
 }
 
@@ -101,7 +99,7 @@ table {
 }
 
 th,td {
-	width: 200px;
+	width: 150px;
 	text-align:center;
 }
 
@@ -135,19 +133,23 @@ li:hover {
 }
 
 .about:hover {
-	background-color: #800909;
+	background-color: #ef7901;
 }
 
 .disclaimer:hover {
-	background-color: #332222;
+	background-color: #d54421;
 }
 
 .results:hover {
-	background-color: #1a2b2b
+	background-color: #98bf0d;
+}
+
+.courses:hover {
+	background-color: #01b0ec;
 }
 
 .graphs:hover {
-	background-color: #007b25;
+	background-color: #7449f1;
 }
 
 p {
@@ -165,26 +167,6 @@ th a {
 	color: black;
 }
 
-input {
-	width: 200px;
-	margin: 20px;
-	outline: none;
-	border: 1px solid black;
-	-webkit-transition: all 0.25s ease-in-out;
-	-moz-transition: all 0.25s ease-in-out;
-	-o-transition: all 0.25s ease-in-out;
-	-ms-transition: all 0.25s ease-in-out;
-	transition: all 0.25s ease-in-out;
-}
-
-input:focus {
-	-webkit-transition: all 0.25s ease-in-out;
-	-moz-transition: all 0.25s ease-in-out;
-	-o-transition: all 0.25s ease-in-out;
-	-ms-transition: all 0.25s ease-in-out;
-	transition: all 0.25s ease-in-out;
-	box-shadow: 0 0 5px black;
-}
 tr:nth-child(even) {
 	background-color: #eeeeee;
 }
@@ -199,3 +181,115 @@ color:#58a;
 h3 {
 	margin-top: 50px;
 }
+
+.super {
+	color: red;
+}
+
+form { 
+		font-family: 'Yanone Kaffeesatz', arial, sans-serif;
+		border: 1px solid #ddd; 
+		padding: 30px 40px 0px 40px; 
+		width: 500px;
+		margin-left: auto;
+		margin-right: auto;
+		background: #fff;
+		text-align: center;
+		margin-bottom: 50px;
+		
+				
+		/* -- CSS3 - define rounded corners for the form -- */	
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+		border-radius: 10px; 		
+		
+		/* -- CSS3 - create a background graident -- */
+		background: -webkit-gradient(linear, 0% 0%, 0% 40%, from(#EEE), to(#FFFFFF)); 
+		background: -moz-linear-gradient(0% 40% 90deg,#FFF, #EEE); 
+		
+		/* -- CSS3 - add a drop shadow -- */
+		-webkit-box-shadow:0px 0 50px #ccc;
+		-moz-box-shadow:0px 0 50px #ccc; 
+		box-shadow:0px 0 50px #ccc;		 		
+	}
+
+	.search-head {
+		font-size: 25px;
+		color: #555; 
+		margin: 0 0 20px 0; 
+	}	
+	
+	fieldset { border: none; }
+	
+	#details { 
+		//float: left;
+		width: 100%; 
+	}
+	
+	input { 		
+		padding: 8px; 
+		margin: 4px 0 20px 0; 
+		background: #fff; 
+		width: 220px; 
+		font-size: 14px; 
+		color: #555; 
+		border: 1px #ddd solid;
+		
+		/* -- CSS3 Shadow - create a shadow around each input element -- */ 
+		-webkit-box-shadow: 0px 0px 4px #aaa;
+		-moz-box-shadow: 0px 0px 4px #aaa; 
+		box-shadow: 0px 0px 4px #aaa;
+		
+		/* -- CSS3 Transition - define what the transition will be applied to (i.e. the background) -- */		
+		-webkit-transition: background 0.3s linear;							
+	}
+	
+	input:hover, textarea:hover { 
+		background: #eee; 
+	}
+		
+	input.submit { 	
+		width: 150px; 
+		color: #eee; 
+		text-transform: uppercase; 
+		margin-top: 10px;
+		background-color: #18a5cc;
+		border: none;
+		
+		/* -- CSS3 Transition - define which property to animate (i.e. the shadow)  -- */
+		-webkit-transition: -webkit-box-shadow 0.3s linear;
+		
+		/* -- CSS3 - Rounded Corners -- */
+		-moz-border-radius: 4px; 
+		-webkit-border-radius: 4px;
+		border-radius: 4px; 
+						
+		/* -- CSS3 Shadow - create a shadow around each input element -- */ 
+		background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#18a5cc), to(#0a85a8)); 
+		background: -moz-linear-gradient(25% 75% 90deg,#0a85a8, #18a5cc);		
+	} 
+	
+	input.submit:hover { 		
+		-webkit-box-shadow: 0px 0px 20px #555;
+		-moz-box-shadow: 0px 0px 20px #aaa; 
+		box-shadow: 0px 0px 20px #555;	
+		cursor:  pointer; 
+	}
+
+	select {
+		margin: 0px;
+		padding: 6px;
+		font-family: 'Yanone Kaffeesatz', arial, sans-serif;
+		font-size: 18px;
+		margin-bottom: 10px;
+		margin-right: 10px;
+	}
+
+	#container {
+		text-align: center;
+	}
+
+	h3 {
+		padding: 0px;
+		margin: 0px;
+	}
