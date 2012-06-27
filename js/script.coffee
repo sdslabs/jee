@@ -1,5 +1,4 @@
 requirejs(['jquery','d3','text!../data/course.csv'],($,d3=window.d3,CoursesCSV)->
-
   ## Array difference ##
   Array.prototype.intersect = (a) ->
     (i for i in @ when a.indexOf(i)>-1)
@@ -13,7 +12,8 @@ requirejs(['jquery','d3','text!../data/course.csv'],($,d3=window.d3,CoursesCSV)-
     return @codes if instiCode=='any'
     (course.code for course in @ when (course.code && course.code.substr(0,1)==instiCode))
 
-  d3.csv 'data/results.csv', (Results)->
+  #File is actually a csv, we masquerade it as json to gzip encode it on github pages
+  d3.csv 'data/results.json', (Results)->
     Results.forEach (d,i)->
       d.reg=+d.reg
       d.cml=+d.cml
@@ -56,7 +56,7 @@ requirejs(['jquery','d3','text!../data/course.csv'],($,d3=window.d3,CoursesCSV)-
       @
     Results.filterCenter = (center)->
       return @ if center=='any'
-      (i.filter=false for i in @ when (i.center!=center))
+      (i.filter=false for i in @ when i.center!=parseInt(center,10))
     #JQuery Event Handling for searching 
     $(document).ready ->
       $("#q").change (e) ->
@@ -77,7 +77,7 @@ requirejs(['jquery','d3','text!../data/course.csv'],($,d3=window.d3,CoursesCSV)-
       .filterAIR($('#air_min').val(),$('#air_max').val())
       .filterGender($('#gender').val())
       .filterCategory($('#category').val())
-      .filterCenter(parseInt($('#center').val()))
+      .filterCenter($('#center').val())
       Results.filterBranches(branchCodes) if Courses.codes.length != branchCodes.length
         
       total=0
@@ -125,4 +125,5 @@ requirejs(['jquery','d3','text!../data/course.csv'],($,d3=window.d3,CoursesCSV)-
             <td>#{user.sex}</td>
           </tr>"
       $("#results").html(html)
+    console.log("Ready")
 )
