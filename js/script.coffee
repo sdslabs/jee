@@ -54,6 +54,9 @@ requirejs(['jquery','d3','text!../data/course.csv'],($,d3=window.d3,CoursesCSV)-
       return @ if cat =='any'
       (i.filter=false for i in @ when (i.category!=cat))
       @
+    Results.filterCenter = (center)->
+      return @ if center=='any'
+      (i.filter=false for i in @ when (i.center!=center))
     #JQuery Event Handling for searching 
     $(document).ready ->
       $("#q").change (e) ->
@@ -74,6 +77,7 @@ requirejs(['jquery','d3','text!../data/course.csv'],($,d3=window.d3,CoursesCSV)-
       .filterAIR($('#air_min').val(),$('#air_max').val())
       .filterGender($('#gender').val())
       .filterCategory($('#category').val())
+      .filterCenter(parseInt($('#center').val()))
       Results.filterBranches(branchCodes) if Courses.codes.length != branchCodes.length
         
       total=0
@@ -81,8 +85,10 @@ requirejs(['jquery','d3','text!../data/course.csv'],($,d3=window.d3,CoursesCSV)-
       $("#results_number").text(total)
 
     $('input,select').change refresh
-    $('#refresh').click ()->
-      Results.toString()
+    $('#refresh').click (confirm=true)->
+      if(parseInt($("#results_number").text()) > 2000)
+        confirm=window.confirm("You are rendering a large number of records. This may cause your browser to hang for a while. Are you sure you want to continue? ")
+      Results.toString() if confirm
       false
     #This is the main csv parser for results
     #function for each time we receive some
@@ -102,8 +108,7 @@ requirejs(['jquery','d3','text!../data/course.csv'],($,d3=window.d3,CoursesCSV)-
         marks="N/A"
         marks="#{user.marks} (#{user.physics}+#{user.chemistry}+#{user.maths})" if user.marks!=0
 
-        #Course Stuff
-        console.log Courses[user.alloted]
+        #Course stuff
         courseId1 = Courses.codes.indexOf(user.alloted) if user.alloted
         courseId2 = Courses.codes.indexOf(user.alloted2) if user.alloted2
         alloted = "#{Courses[courseId1].branch}, #{Courses[courseId1].institute}" if user.alloted
