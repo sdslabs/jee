@@ -1,43 +1,59 @@
-requirejs(['jquery','d3','crossfilter','text!../data/center.csv'],($,d3=window.d3,crossfilter = window.crossfilter,Centers)->
-  Candidate={}
-  Centers = d3.csv.parse Centers
-  Center ={}
-  for i in Centers
-    [code,city,state]=i
-    Center[code] = [city,state]
-  #d3.csv 'data/course.csv', (Course)->
+requirejs(['jquery','d3','text!../data/course.csv'],($,d3=window.d3,CoursesCSV)->
+
+  ## Array difference ##
+  Array.prototype.intersect = (a) ->
+    (i for i in @ when a.indexOf(i)>-1)
+  Courses = d3.csv.parse CoursesCSV
+  Courses.codes = (course.code for course in Courses)
+  Courses.filterByName = (name)->
+    return @codes if name==''
+    name=name.toLowerCase()
+    (course.code for course in @ when (course.code && course.branch.toLowerCase().indexOf(name)!=-1))
+  Courses.filterByInsti = (instiCode)->
+    return @codes if instiCode=='any'
+    (course.code for course in @ when (course.code && course.code.substr(0,1)==instiCode))
+
   d3.csv 'data/results.csv', (Results)->
     Results.forEach (d,i)->
       d.reg=+d.reg
       d.cml=+d.cml
       d.category_rank=+d.category_rank
       d.pd_rank=d.pd_rank
-      d.city = Center[d.center].city if Center[d.center]
       d.center=+d.center
       d.physics=+d.physics
       d.chemistry=+d.chemistry
       d.maths=+d.maths
-    Candidate = crossfilter Results;
-    all=Candidate.groupAll();
-    AIR=Candidate.dimension (d)->
-      return d.cml
-    regNo = Candidate.dimension (d)->
-      return d.reg
-    course = Candidate.dimension (d) ->
-      return d.alloted2
-    courses = course.group()
-    gender = Candidate.dimension (d)->
-      return d.sex=='male'
-    genderGroup = gender.group()
-    mark = Candidate.dimension (d)->
-      return d.physics+d.chemistry+d.maths
-    marks = mark.group (m)->
-      return m-m%10
-    institute = Candidate.dimension (d)->
-      return d.alloted2.substr(0,1)
-    city = Candidate.dimension (d)->
-      return d.center
-    cities = city.group()
+      d.filter=true #Default filter value is true
+      d.marks=d.physics+d.chemistry+d.maths
+    #Since we want an intersection os all these filters
+    #instead of marking each record as true
+    #we instead remove records in each filter
+    #at then end we are left with the intersected records only
+    #filter=false means that the record has been removed
+    #All of this can be optimized further by checking filters
+    #only for stuff that is not already removed
+    Results.clearFilter=()->
+      i.filter=true for i in @
+      @
+    Results.filterMarks = (lower,upper) ->
+      (i.filter=false for i in @ when (i.marks<lower || i.marks>upper))
+      @
+    #filterBranches is the costliest client side operation
+    #It is performed only when needed
+    Results.filterBranches = (branchCodes)->
+      (i.filter=false for i in @ when (i.alloted2 not in branchCodes))
+      @
+    Results.filterAIR = (lower,upper) ->
+      (i.filter=false for i in @ when (i.cml<lower || i.cml>upper))
+      @
+    Results.filterGender = (gender)->
+      return @ if gender=='any'
+      (i.filter=false for i in @ when (i.sex!=gender))
+      @
+    Results.filterCategory = (cat)->
+      return @ if cat =='any'
+      (i.filter=false for i in @ when (i.category!=cat))
+      @
     #JQuery Event Handling for searching 
     $(document).ready ->
       $("#q").change (e) ->
@@ -50,16 +66,23 @@ requirejs(['jquery','d3','crossfilter','text!../data/center.csv'],($,d3=window.d
             rows=(c for c in Results when choose c)
             console.log rows
     refresh =() ->
-      #Starting with marks
-      #console.log mark.filterRange([$('#marks_min').val(),$('#marks_max').val()]).top(Infinity)
-    $('input').change refresh
+      branchCodes=Courses.filterByInsti($('#institute').val())
+      branchCodes=branchCodes.intersect Courses.filterByName($('#alloted').val()) if $('#alloted').val()!=''
+      console.log branchCodes
+      Results
+      .clearFilter()
+      .filterMarks($('#marks_min').val(),$('#marks_max').val())
+      .filterAIR($('#air_min').val(),$('#air_max').val())
+      .filterGender($('#gender').val())
+      .filterCategory($('#category').val())
+      if (Courses.codes.length != branchCodes.length)
+        console.log 1
+        Results.filterBranches(branchCodes) 
+      total=0
+      total++ for r in Results when r.filter==true
+      console.log total
 
-    $('.max').change ->
-      console.log 
-      $(@).val Math.max($($(@).prev()).val(),@value)
-    $('.min').change ->
-      console.log @value
-      $(@).val Math.min($($(@).next()).val(),@value)
+    $('input,select').change refresh
   #Handle the Center codes similarly
   
   #This is the main csv parser for results
@@ -100,8 +123,4 @@ requirejs(['jquery','d3','crossfilter','text!../data/center.csv'],($,d3=window.d
           <td>#{marks}</td>
           <td>#{sex}</td>
         </tr>"
-  $('input').hover ->
-    $(@).attr 'title',''
-    $(@).attr 'title',$(@).val()
-  
 )

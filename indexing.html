@@ -17,21 +17,21 @@
 						<form class="well form-inline">
 							<fieldset>
 								<label for="marks_min">Marks from: </label>
-								<input class="span1" name="marks_min" type="number" min="0" max="400" value="0">
+								<input class="span1" id="marks_min" name="marks_min" type="number" min="0" max="400" value="0">
 								<label for="marks_max"> to </label>
-								<input class="span1" name="marks_max" type="number" min=0 max=400 value="400">
+								<input class="span1" id="marks_max" name="marks_max" type="number" min=0 max=400 value="400">
 								<label for="air_min">  and AIR from: </label>
-								<input name="air_min" type="number" min="0" max="10000" class="span1" size="4">
+								<input name="air_min" id="air_min" type="number" min="0" max="10000" class="span1" size="4" value="0">
 								<label for="air_max"> to </label>
-								<input name="air_max" type="number" min="0" max="10000" class="span1" size="4">
+								<input name="air_max" id="air_max" type="number" min="0" max="10000" class="span1" size="4" value="10000">
 								<label for="gender"> and </label>
-								<select class="span2" name="gender">
+								<select id="gender" class="span2" name="gender">
 									<option value="any"> Any Gender</option>
-									<option value="true">Male</option>
-									<option value="false">Female</option>
+									<option value="male">Male</option>
+									<option value="female">Female</option>
 								</select>
 								<label for="category"> in category</label>
-								<select name="category" class="span1">
+								<select id="category" name="category" class="span1">
 									<option value="any">Any</option>
 									<option value="GE">GE</option>
 									<option value="OBC">OBC</option>
@@ -44,9 +44,9 @@
 								<label for="name"> and Name includes </label>
 								<input id="q" name="name" placeholder="Enter a partial name">
 								<label for="alloted"> alloted </label>
-								<input name="alloted" placeholder="Enter a partial branch name"></input>
+								<input id="alloted" name="alloted" placeholder="Enter a partial branch name"></input>
 								<label for="insti"> in </label>
-								<select name="insti">
+								<select id="institute" name="insti">
 									<option value="any">Any Institute</option>
 									<option value="A">IIT Bhubaneswar</option>
 									<option value="B">IIT Bombay</option>
