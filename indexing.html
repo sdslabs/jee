@@ -2,15 +2,77 @@
 <html lang="en">
 	<head>
 		<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"></link>
+		<link href="css/harshil.css" rel="stylesheet" type="text/css"></link>
 		<script data-main="js/cs!script" src="js/require-jquery.js"></script>
+		<title>JEE-2012 Ranklist & Course Allotment</title>
+		<meta property="og:title" content="JEE 2012 Ranklist & Course Allotment"/>
+		<meta property="og:site_name" content="SDSLabs, IIT Roorkee"/>
+		<meta property="og:type" content="website"/>
+		<meta property="og:url" content="http://jee.sdslabs.co/"/>
+		<meta property="og:description" content="JEE 2012 Course Allotment & complete ranklist compiled by SDSLabs, IIT Roorkee"/>
+		<meta property="og:image" content="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-snc4/162003_182484805131346_636893991_n.jpg"/>
+		<meta property="fb:app_id" content="196618997019945"/>
+		<meta name="google" content="notranslate"/>
+		<meta charset="utf-8"/> 
+		<meta name="description" content="IIT JEE 2012 ranks of all candidates by name and analysis of selected candidates." />
+		<meta name="author" content="SDSLabs, IIT Roorkee" />
+		<meta name="keywords" content="jee, iitjee, sdslabs, arpit, agarwal, engineering, technology, ranks, marks" />
+		<link rel="icon" href="./favicon.ico">
 	</head>
 	<body>
-		<div class="container-fluid">
+		<div id="fb-root"></div>
+		<script>
+		  window.fbAsyncInit = function() {
+		    FB.init({
+		      appId      : '196618997019945', // App ID
+		      status     : true, // check login status
+		      cookie     : true, // enable cookies to allow the server to access the session
+		      xfbml      : true  // parse XFBML
+		    });
+
+		    // Additional initialization code here
+		  };
+
+		  // Load the SDK Asynchronously
+		  (function(d){
+		     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+		     if (d.getElementById(id)) {return;}
+		     js = d.createElement('script'); js.id = id; js.async = true;
+		     js.src = "//connect.facebook.net/en_US/all.js";
+		     ref.parentNode.insertBefore(js, ref);
+		   }(document));
+		</script>
+		<div class="container-fluid" id="wrapper">
 			<div class="row-fluid">
-				<div class="hero-unit">
-			  		<h1>IIT JEE 2012 Allotments</h1>
-			  		<small>SDSLabs - IIT Roorkee</small>
-			  	</div>
+				<div id="header">
+					<ul align="center">
+						<a href="/about.html"><li class="about">About</li></a>
+						<a href="/disclaimer.html"><li class="disclaimer">Disclaimer</li></a>
+						<a href="/result.html"><li class="results">Rank List</li></a>
+						<a href="/"><li class="courses">Course Allotment <sup class="super">NEW</sup></li></a>
+						<a href="/graph/index.html"><li class="graphs">Analysis & Graphs</li></a>
+					</ul>
+					<h1>
+						JEE-2012 First and Second Allotment List
+					</h1>
+				</div>
+				<div id="socialtools">		
+					<div id="fbshare">
+						<a name="fb_share" type="box_count" share_url="http://jee.sdslabs.co/" id="sharebutton" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fjee.sdslabs.co%2F&amp;src=sp" style="text-decoration: none; ">
+							<span class="fb_share_size_Large fb_share_count_wrapper">
+							<span></span>
+							<span class="fb_share_count_nub_top "></span>
+							<span class="fb_share_count  fb_share_count_top">
+								<span class="fb_share_count_inner">1456</span>
+							</span>
+							<span class="FBConnectButton FBConnectButton_Small" style="cursor:pointer;">
+								<span class="FBConnectButton_Text">Share!</span></span>
+							</span>
+						</a>
+					</div>
+					<div style="margin:0px;" class="fb-like" data-href="https://www.facebook.com/SDSLabs" data-send="true" data-width="550" data-show-faces="true" data-font="trebuchet ms">
+					</div>
+				</div>
 			  	<div class="row-fluid">
 					<div class="span10 well">
 						<form class="form-inline">
@@ -20,9 +82,9 @@
 								<label for="marks_max"> to </label>
 								<input class="span1" id="marks_max" name="marks_max" type="number" min=0 max=400 value="400">
 								<label for="air_min">  and AIR from: </label>
-								<input name="air_min" id="air_min" type="number" min="0" max="10000" class="span1" size="4" value="0">
+								<input name="air_min" id="air_min" type="number" min="0" max="10000" class="span1" size="4" value="1">
 								<label for="air_max"> to </label>
-								<input name="air_max" id="air_max" type="number" min="0" max="10000" class="span1" size="4" value="10000">
+								<input name="air_max" id="air_max" type="number" min="0" max="10000" class="span1" size="4" value="100">
 								<label for="gender"> and </label>
 								<select id="gender" class="span2" name="gender">
 									<option value="any"> Any Gender</option>
@@ -235,6 +297,3 @@
 		</div>
 	</body>
 </html>
-
-
-	
