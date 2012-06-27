@@ -57,17 +57,10 @@ requirejs(['jquery','d3','text!../data/course.csv'],($,d3=window.d3,CoursesCSV)-
     Results.filterCenter = (center)->
       return @ if center=='any'
       (i.filter=false for i in @ when i.center!=parseInt(center,10))
-    #JQuery Event Handling for searching 
-    $(document).ready ->
-      $("#q").change (e) ->
-        if @value.length >= 3
-          val = @value
-          $.get "index/" + val.substr(0, 2).toUpperCase() + ".json", (data) ->
-            registrationNumbers = data[val.toUpperCase()]
-            choose=(c)->
-              return registrationNumbers.indexOf(c.reg)>-1
-            rows=(c for c in Results when choose c)
-            console.log rows
+    #Expects an array of registration numbers
+    Results.filterReg =(regNumbers)->
+        (i.filter=false for i in @ when (i.reg not in regNumbers))
+        @
     refresh =() ->
       branchCodes=Courses.filterByInsti($('#institute').val())
       branchCodes=branchCodes.intersect Courses.filterByName($('#alloted').val()) if $('#alloted').val()!=''
@@ -79,16 +72,31 @@ requirejs(['jquery','d3','text!../data/course.csv'],($,d3=window.d3,CoursesCSV)-
       .filterCategory($('#category').val())
       .filterCenter($('#center').val())
       Results.filterBranches(branchCodes) if Courses.codes.length != branchCodes.length
-        
+      updateTotal()
+
+    $('input,select').change refresh
+
+    #Update the total 
+    updateTotal = ()->
       total=0
       total++ for r in Results when r.filter==true
       $("#results_number").text(total)
 
-    $('input,select').change refresh
-    $('#refresh').click (confirm=true)->
+    #Displays the resultset after a confirmation prompt
+    showResults = (confirm=true)->
       if(parseInt($("#results_number").text()) > 2000)
         confirm=window.confirm("You are rendering a large number of records. This may cause your browser to hang for a while. Are you sure you want to continue? ")
-      Results.toString() if confirm
+      $('#results').html(Results.toString()) if confirm
+
+    $('#refresh').click ()->
+      name=$('#q').val()
+      if(name.length>3)
+        $.getJSON "http://jee.sdslabs.co/find.php?callback=?", {q:name},(data)->
+          Results.filterReg data
+          updateTotal()
+          showResults()
+        return
+      showResults()
       false
     #This is the main csv parser for results
     #function for each time we receive some
@@ -127,7 +135,7 @@ requirejs(['jquery','d3','text!../data/course.csv'],($,d3=window.d3,CoursesCSV)-
             <td>#{marks}</td>
             <td>#{user.sex}</td>
           </tr>"
-      $("#results").html(html)
+      html
     console.log("Ready")
     $.getJSON "http://jee.sdslabs.co/removed.php?callback=?", (data)->
       $.removed = data
