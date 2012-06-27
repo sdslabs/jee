@@ -18,7 +18,7 @@ requirejs(['jquery','d3','text!../data/course.csv'],($,d3=window.d3,CoursesCSV)-
       d.reg=+d.reg
       d.cml=+d.cml
       d.category_rank=+d.category_rank
-      d.pd_rank=d.pd_rank
+      d.pd_rank=+d.pd_rank
       d.center=+d.center
       d.physics=+d.physics
       d.chemistry=+d.chemistry
@@ -68,59 +68,56 @@ requirejs(['jquery','d3','text!../data/course.csv'],($,d3=window.d3,CoursesCSV)-
     refresh =() ->
       branchCodes=Courses.filterByInsti($('#institute').val())
       branchCodes=branchCodes.intersect Courses.filterByName($('#alloted').val()) if $('#alloted').val()!=''
-      console.log branchCodes
       Results
       .clearFilter()
       .filterMarks($('#marks_min').val(),$('#marks_max').val())
       .filterAIR($('#air_min').val(),$('#air_max').val())
       .filterGender($('#gender').val())
       .filterCategory($('#category').val())
-      if (Courses.codes.length != branchCodes.length)
-        console.log 1
-        Results.filterBranches(branchCodes) 
+      Results.filterBranches(branchCodes) if Courses.codes.length != branchCodes.length
+        
       total=0
       total++ for r in Results when r.filter==true
-      console.log total
+      $("#results_number").text(total)
 
     $('input,select').change refresh
-  #Handle the Center codes similarly
-  
-  #This is the main csv parser for results
-  #function for each time we receive some
-  #content over ajax
-  csvToHTML = (csv,complete=false) ->
-    @marker = @marker ? -1
-    users = csv.split("\n")
-    return if users.length<5
-    arr = users.slice(@marker+1, users.length-1)
-    arr = users if complete
-    html=''
-    testStart = new Date();
-    for user in arr
-      [CML_Rank,registrationNumber,Category,Category_rank, PD_Rank,name,alloted,alloted2,sex,center_code,physics,chem,maths] = user.split(",")
-      #Rank Stuff
-      ranks=''
-      ranks+=" #{CML_Rank} (AIR)" if CML_Rank>0
-      ranks+=" #{Category_rank} (#{Category})" if Category_rank>0
-      ranks+=" #{PD_Rank} (#{Category}_PD)" if PD_Rank>0
+    $('#refresh').click ()->
+      Results.toString()
+      false
+    #This is the main csv parser for results
+    #function for each time we receive some
+    #content over ajax
+    Results.toString =() ->
+      html=''
+      testStart = new Date();
+      for user in @
+        continue unless user.filter
+        #Rank Stuff
+        ranks=''
+        ranks+=" #{user.cml} (AIR)" if user.cml>0
+        ranks+=" #{user.category} (#{user.category})" if user.category_rank>0
+        ranks+=" #{user.pd_rank} (#{user.category}_PD)" if user.pd_rank>0
 
-      #Marks stuff
-      total = parseInt(physics)+parseInt(chem)+parseInt(maths)
-      marks="N/A"
-      marks="#{total} (#{physics}+#{chem}+#{maths})" if total!=0
+        #Marks stuff
+        marks="N/A"
+        marks="#{user.marks} (#{user.physics}+#{user.chemistry}+#{user.maths})" if user.marks!=0
 
-      #Course Stuff
-      alloted = "#{Course[alloted][1]} (#{Course[alloted][0]})" if alloted
-      alloted2 = "#{Course[alloted2][1]} (#{Course[alloted2][0]})" if alloted2
-      html+="<tr>
-          <td>#{ranks}</td>
-          <td>#{name}</td>
-          <td>#{Category}</td>
-          <td>#{registrationNumber}</td>
-          <td>#{alloted ? "" }</td>
-          <td>#{alloted2 ? ""}</td>
-          <td>#{center_code ? "N/A"}</td>
-          <td>#{marks}</td>
-          <td>#{sex}</td>
-        </tr>"
+        #Course Stuff
+        console.log Courses[user.alloted]
+        courseId1 = Courses.codes.indexOf(user.alloted) if user.alloted
+        courseId2 = Courses.codes.indexOf(user.alloted2) if user.alloted2
+        alloted = "#{Courses[courseId1].branch}, #{Courses[courseId1].institute}" if user.alloted
+        alloted2 = "#{Courses[courseId2].branch}, #{Courses[courseId2].institute}" if user.alloted2
+        center = $("#center option[value='#{user.center}']").text() if user.center
+        html+="<tr>
+            <td>#{ranks}</td>
+            <td>#{user.name}</td>
+            <td>#{user.category}</td>
+            <td title=\"#{Courses[courseId1].course}\">#{alloted ? ' - ' }</td>
+            <td title=\"#{Courses[courseId2].course}\">#{alloted2 ? ' - ' }</td>
+            <td>#{center ? "N/A"}</td>
+            <td>#{marks}</td>
+            <td>#{user.sex}</td>
+          </tr>"
+      $("#results").html(html)
 )
