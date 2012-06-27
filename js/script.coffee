@@ -109,22 +109,27 @@ requirejs(['jquery','d3','text!../data/course.csv'],($,d3=window.d3,CoursesCSV)-
         marks="#{user.marks} (#{user.physics}+#{user.chemistry}+#{user.maths})" if user.marks!=0
 
         #Course stuff
-        courseId1 = Courses.codes.indexOf(user.alloted) if user.alloted
-        courseId2 = Courses.codes.indexOf(user.alloted2) if user.alloted2
-        alloted = "#{Courses[courseId1].branch}, #{Courses[courseId1].institute}" if user.alloted
-        alloted2 = "#{Courses[courseId2].branch}, #{Courses[courseId2].institute}" if user.alloted2
+        courseId1 = Courses.codes.indexOf(user.alloted) if user.alloted!=''
+        courseId2 = Courses.codes.indexOf(user.alloted2) if user.alloted2!=''
+        alloted = "#{Courses[courseId1].branch}, #{Courses[courseId1].institute}" if user.alloted!=''
+        alloted2 = "#{Courses[courseId2].branch}, #{Courses[courseId2].institute}" if user.alloted2 !=''
+        course1 = Courses[courseId1].course if user.alloted!=''
+        course2 = Courses[courseId2].course if user.alloted2!=''
         center = $("#center option[value='#{user.center}']").text() if user.center
+        user.name = "Name removed on request" if user.reg in $.removed
         html+="<tr>
             <td>#{ranks}</td>
             <td>#{user.name}</td>
             <td>#{user.category}</td>
-            <td title=\"#{Courses[courseId1].course}\">#{alloted ? ' - ' }</td>
-            <td title=\"#{Courses[courseId2].course}\">#{alloted2 ? ' - ' }</td>
+            <td title=\"#{course1 ? ''}\">#{alloted ? ' - ' }</td>
+            <td title=\"#{course2 ? ''}\">#{alloted2 ? ' - ' }</td>
             <td>#{center ? "N/A"}</td>
             <td>#{marks}</td>
             <td>#{user.sex}</td>
           </tr>"
       $("#results").html(html)
     console.log("Ready")
-    $('#air_max').val(100).trigger('change')
+    $.getJSON "http://jee.sdslabs.co/removed.php?callback=?", (data)->
+      $.removed = data
+      $('#air_max').trigger('change')
 )
