@@ -1,25 +1,238 @@
-<script data-main="js/cs!script" src="js/require-jquery.js"></script>
-<input id="q">
-<br>
-<table>
-	<thead>
-		<tr>
-			<th>Ranks</th>
-			<th>Name</th>
-			<th>Category</th>
-			<th>Registration Number</th>
-			<th>1st Allotment</th>
-			<th>Second Allotment</th>
-			<th>Center</th>
-			<th>Marks</th>
-			<th>Gender</th>
-		</tr>
-	</thead>
-	<tfoot>
-		<tr>
-			<td>&copy; SDSLabs 2012</td>
-		</tr>
-	</tfoot>
-	<tbody id="results">
-	</tbody>
-</table>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"></link>
+		<script data-main="js/cs!script" src="js/require-jquery.js"></script>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="row-fluid">
+				<div class="hero-unit">
+			  		<h1>IIT JEE 2012 Allotments</h1>
+			  		<small>SDSLabs - IIT Roorkee</small>
+			  	</div>
+			  	<div class="row-fluid">
+					<div class="span12">
+						<h3>Please change the criteria to filter out candidates</h3>
+						<form class="well form-inline">
+							<fieldset>
+								<label for="marks_min">Marks from: </label>
+								<input class="span1" name="marks_min" type="number" min="0" max="400" value="0">
+								<label for="marks_max"> to </label>
+								<input class="span1" name="marks_max" type="number" min=0 max=400 value="400">
+								<label for="air_min">  and AIR from: </label>
+								<input name="air_min" type="number" min="0" max="10000" class="span1" size="4">
+								<label for="air_max"> to </label>
+								<input name="air_max" type="number" min="0" max="10000" class="span1" size="4">
+								<label for="gender"> and </label>
+								<select class="span2" name="gender">
+									<option value="any"> Any Gender</option>
+									<option value="true">Male</option>
+									<option value="false">Female</option>
+								</select>
+								<label for="category"> in category</label>
+								<select name="category" class="span1">
+									<option value="any">Any</option>
+									<option value="GE">GE</option>
+									<option value="OBC">OBC</option>
+									<option value="SC">SC</option>
+									<option value="ST">ST</option>
+								</select>
+							</fieldset>
+							<br>
+							<fieldset>
+								<label for="name"> and Name includes </label>
+								<input id="q" name="name" placeholder="Enter a partial name">
+								<label for="alloted"> alloted </label>
+								<input name="alloted" placeholder="Enter a partial branch name"></input>
+								<label for="insti"> in </label>
+								<select name="insti">
+									<option value="any">Any Institute</option>
+									<option value="A">IIT Bhubaneswar</option>
+									<option value="B">IIT Bombay</option>
+									<option value="D">IIT Delhi</option>
+									<option value="N">IIT Gandhinagar</option>
+									<option value="W">IIT Guwahati</option>
+									<option value="H">IIT Hyderabad</option>
+									<option value="E">IIT Indore</option>
+									<option value="K">IIT Kanpur</option>
+									<option value="G">IIT Kharagpur</option>
+									<option value="M">IIT Madras</option>
+									<option value="C">IIT Mandi</option>
+									<option value="P">IIT Patna</option>
+									<option value="J">IIT Rajasthan</option>
+									<option value="R">IIT Roorkee</option>
+									<option value="U">IIT Ropar</option>
+									<option value="S">ISM Dhanbad</option>
+									<option value="V">IT-BHU Varanasi</option>
+								</select>
+								<label from="city"> from </label>
+								<select class="span2" name="city">
+									<option value="any">Any Center</option>
+									<option value="517">Agartala </option>
+									<option value="406">Agra</option>
+									<option value="102">Ahmedabad</option>
+									<option value="118">Ajmer </option>
+									<option value="107">Akola</option>
+									<option value="215">Aligarh</option>
+									<option value="407">Allahabad</option>
+									<option value="212">Alwar</option>
+									<option value="702">Ambala</option>
+									<option value="711">Amritsar</option>
+									<option value="518">Asansol</option>
+									<option value="108">Aurangabad</option>
+									<option value="510">Balasore</option>
+									<option value="608">Bangalore</option>
+									<option value="718">Bareilly</option>
+									<option value="712">Bathinda</option>
+									<option value="106">Belgaum</option>
+									<option value="520">Belur</option>
+									<option value="511">Berhampur</option>
+									<option value="308">Bhagalpur</option>
+									<option value="503">Bhillai</option>
+									<option value="401">Bhopal</option>
+									<option value="512">Bhubaneswar</option>
+									<option value="119">Bikaner</option>
+									<option value="504">Bilaspur</option>
+									<option value="506">Bokaro</option>
+									<option value="519">Burdwan</option>
+									<option value="701">Chandigarh</option>
+									<option value="617">Chennai</option>
+									<option value="618">Coimbatore</option>
+									<option value="513">Cuttack</option>
+									<option value="716">Dehradun</option>
+									<option value="200">Delhi</option>
+									<option value="507">Dhanbad</option>
+									<option value="302">Dibrugarh</option>
+									<option value="217">Dubai</option>
+									<option value="521">Durgapur</option>
+									<option value="207">Faridabad</option>
+									<option value="516">Gangtok</option>
+									<option value="719">Gautam Budh Nagar (Noida)</option>
+									<option value="309">Gaya</option>
+									<option value="720">Ghaziabad</option>
+									<option value="303">Goalpara</option>
+									<option value="408">Gorakhpur</option>
+									<option value="601">Guntur</option>
+									<option value="208">Gurgaon</option>
+									<option value="304">Guwahati</option>
+									<option value="402">Gwalior</option>
+									<option value="602">Hyderabad</option>
+									<option value="313">Imphal</option>
+									<option value="210">Indore</option>
+									<option value="301">Itanagar</option>
+									<option value="403">Jabalpur</option>
+									<option value="120">Jaipur</option>
+									<option value="713">Jalandhar</option>
+									<option value="209">Jammu</option>
+									<option value="508">Jamshedpur</option>
+									<option value="409">Jhansi</option>
+									<option value="121">Jodhpur</option>
+									<option value="305">Jorhat</option>
+									<option value="410">Kanpur</option>
+									<option value="310">Katihar</option>
+									<option value="522">Kharagpur</option>
+									<option value="611">Kochi</option>
+									<option value="109">Kolhapur</option>
+									<option value="523">Kolkata (North)</option>
+									<option value="524">Kolkata (Salt Lake)</option>
+									<option value="525">Kolkata (South)</option>
+									<option value="612">Kozhikode</option>
+									<option value="603">Kurnool</option>
+									<option value="703">Kurushetra</option>
+									<option value="411">Lucknow</option>
+									<option value="714">Ludhiana</option>
+									<option value="619">Madurai</option>
+									<option value="526">Malda</option>
+									<option value="708">Mandi</option>
+									<option value="609">Mangalore</option>
+									<option value="216">Mathura</option>
+									<option value="721">Meerut</option>
+									<option value="722">Moradabad</option>
+									<option value="110">Mumbai</option>
+									<option value="311">Muzaffarpur</option>
+									<option value="610">Mysore</option>
+									<option value="111">Nagpur</option>
+									<option value="404">Nainital</option>
+									<option value="112">Nashik</option>
+									<option value="113">Navi Mumbai</option>
+									<option value="604">Nellore</option>
+									<option value="613">Palakkad</option>
+									<option value="709">Palampur</option>
+									<option value="101">panaji</option>
+									<option value="704">Panipat</option>
+									<option value="405">Pantnagar</option>
+									<option value="715">Patiala</option>
+									<option value="312">Patna</option>
+									<option value="501">Port Blair</option>
+									<option value="616">Puducherry</option>
+									<option value="114">Pune</option>
+									<option value="412">Raibareilly</option>
+									<option value="505">Raipur</option>
+									<option value="103">Rajkot</option>
+									<option value="509">Ranchi</option>
+									<option value="115">Ratnagiri</option>
+									<option value="705">Rohtak</option>
+									<option value="717">Roorkee</option>
+									<option value="514">Rourkela</option>
+									<option value="723">Saharanpur</option>
+									<option value="620">Salem</option>
+									<option value="515">Sambalpur</option>
+									<option value="314">Shillong</option>
+									<option value="710">Shimla</option>
+									<option value="213">Sikar</option>
+									<option value="306">Silchar</option>
+									<option value="315">Siliguri</option>
+									<option value="116">Solapur</option>
+									<option value="706">Sonipat</option>
+									<option value="104">Surat</option>
+									<option value="307">Tezpur</option>
+									<option value="117">Thane</option>
+									<option value="614">Thiruvananthapuram</option>
+									<option value="615">Thrissur</option>
+									<option value="621">Tiruchirapalli</option>
+									<option value="622">Tirunelveli</option>
+									<option value="605">Tirupathi</option>
+									<option value="214">Udaipur</option>
+									<option value="211">Ujjain</option>
+									<option value="105">Vadodara</option>
+									<option value="724">Varanasi</option>
+									<option value="606">Vijayawada</option>
+									<option value="502">Vishakhapatnam</option>
+									<option value="607">Warangal</option>
+									<option value="707">Yamuna Nagar</option>
+								</select>
+							</fieldset>
+						</form>
+					</div>
+				</div>
+				<table>
+					<thead>
+						<tr>
+							<th>Ranks</th>
+							<th>Name</th>
+							<th>Category</th>
+							<th>Registration Number</th>
+							<th>1st Allotment</th>
+							<th>Second Allotment</th>
+							<th>Center</th>
+							<th>Marks</th>
+							<th>Gender</th>
+						</tr>
+					</thead>
+					<tfoot>
+						<tr>
+							<td>&copy; SDSLabs 2012</td>
+						</tr>
+					</tfoot>
+					<tbody id="results">
+					</tbody>
+				</table>
+			  </div>
+			</div>
+		</div>
+	</body>
+</html>
+
+
+	

@@ -1,4 +1,5 @@
 requirejs(['jquery','d3','crossfilter','text!../data/center.csv'],($,d3=window.d3,crossfilter = window.crossfilter,Centers)->
+  Candidate={}
   Centers = d3.csv.parse Centers
   Center ={}
   for i in Centers
@@ -48,7 +49,17 @@ requirejs(['jquery','d3','crossfilter','text!../data/center.csv'],($,d3=window.d
               return registrationNumbers.indexOf(c.reg)>-1
             rows=(c for c in Results when choose c)
             console.log rows
+    refresh =() ->
+      #Starting with marks
+      #console.log mark.filterRange([$('#marks_min').val(),$('#marks_max').val()]).top(Infinity)
+    $('input').change refresh
 
+    $('.max').change ->
+      console.log 
+      $(@).val Math.max($($(@).prev()).val(),@value)
+    $('.min').change ->
+      console.log @value
+      $(@).val Math.min($($(@).next()).val(),@value)
   #Handle the Center codes similarly
   
   #This is the main csv parser for results
@@ -89,8 +100,8 @@ requirejs(['jquery','d3','crossfilter','text!../data/center.csv'],($,d3=window.d
           <td>#{marks}</td>
           <td>#{sex}</td>
         </tr>"
-    $('#results').append html
-    console.log new Date() - testStart
-    #Update marker
-    @marker = users.length-1;
+  $('input').hover ->
+    $(@).attr 'title',''
+    $(@).attr 'title',$(@).val()
+  
 )
