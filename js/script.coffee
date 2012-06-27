@@ -126,4 +126,5 @@ requirejs(['jquery','d3','text!../data/course.csv'],($,d3=window.d3,CoursesCSV)-
           </tr>"
       $("#results").html(html)
     console.log("Ready")
+    $('#air_max').val(100).trigger('change')
 )
