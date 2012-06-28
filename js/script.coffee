@@ -139,5 +139,6 @@ requirejs(['jquery','d3','text!../data/course.csv'],($,d3=window.d3,CoursesCSV)-
     console.log("Ready")
     $.getJSON "http://jee.sdslabs.co/removed.php?callback=?", (data)->
       $.removed = data
+      $('#refresh').text('Render')
       $('#air_max').trigger('change')
 )
