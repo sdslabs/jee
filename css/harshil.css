@@ -1,8 +1,3 @@
-body {
-	font-family: ubuntu,verdana,sans-serif;
-	color:#333;
-	background: #eee;
-}
 #socialtootls {
 	position: relative;
 }
@@ -94,22 +89,12 @@ a.FBConnectButton_RTL_Small:active{background-position:right -458px}
 	text-align:center;
 }
 
-table {
-	border: 2px solid #dadada;
-}
-
-th,td {
-	width: 280px;
-	text-align:center;
-	padding-right: 5px;
-	padding-left: 5px;
-}
-
 li {
+	font-size: 17px;
 	list-style: none;
 	display: inline-block;
 	width: 200px;
-	padding: 10px 0;
+	padding: 12px 0;
 	margin: 0px;
 	color: white;
 	-webkit-transition: all 0.25s ease-in-out;
@@ -154,144 +139,34 @@ li:hover {
 	background-color: #7449f1;
 }
 
-p {
-	padding: 0px 25%;
-	text-align: justify;
-	font-family: sans-serif;
-	font-size: 18px;
+body {
+	font-family: ubuntu,verdana,sans-serif;
+	color:#333;
+	background: #eee;
 }
+
+h1 {
+	font-size: 2em;
+}
+
 
 .fb-like {
 	margin: 50px;
-}
-
-th a {
-	color: black;
-}
-
-tr:nth-child(even) {
-	background-color: #eeeeee;
-}
-a{
-color:#58a;
 }
 
 #fbshare {
 	margin-left: -1200px;
 }
 
-h3 {
-	margin-top: 50px;
-}
-
 .super {
 	color: red;
 }
 
-form { 
-		font-family: 'Yanone Kaffeesatz', arial, sans-serif;
-		border: 1px solid #ddd; 
-		padding: 30px 40px 0px 40px; 
-		width: 500px;
-		margin-left: auto;
-		margin-right: auto;
-		background: #fff;
-		text-align: center;
-		margin-bottom: 50px;
-		
-				
-		/* -- CSS3 - define rounded corners for the form -- */	
-		-webkit-border-radius: 10px;
-		-moz-border-radius: 10px;
-		border-radius: 10px; 		
-		
-		/* -- CSS3 - create a background graident -- */
-		background: -webkit-gradient(linear, 0% 0%, 0% 40%, from(#EEE), to(#FFFFFF)); 
-		background: -moz-linear-gradient(0% 40% 90deg,#FFF, #EEE); 
-		
-		/* -- CSS3 - add a drop shadow -- */
-		-webkit-box-shadow:0px 0 50px #ccc;
-		-moz-box-shadow:0px 0 50px #ccc; 
-		box-shadow:0px 0 50px #ccc;		 		
-	}
+h1 {
+	font-size: 30px;
+	padding: 20px 0;
+}
 
-	.search-head {
-		font-size: 25px;
-		color: #555; 
-		margin: 0 0 20px 0; 
-	}	
-	
-	fieldset { border: none; }
-	
-	#details { 
-		//float: left;
-		width: 100%; 
-	}
-	
-	input { 		
-		padding: 8px; 
-		margin: 4px 0 20px 0; 
-		background: #fff; 
-		width: 220px; 
-		font-size: 14px; 
-		color: #555; 
-		border: 1px #ddd solid;
-		
-		/* -- CSS3 Shadow - create a shadow around each input element -- */ 
-		-webkit-box-shadow: 0px 0px 4px #aaa;
-		-moz-box-shadow: 0px 0px 4px #aaa; 
-		box-shadow: 0px 0px 4px #aaa;
-		
-		/* -- CSS3 Transition - define what the transition will be applied to (i.e. the background) -- */		
-		-webkit-transition: background 0.3s linear;							
-	}
-	
-	input:hover, textarea:hover { 
-		background: #eee; 
-	}
-		
-	input.submit { 	
-		width: 150px; 
-		color: #eee; 
-		text-transform: uppercase; 
-		margin-top: 10px;
-		background-color: #18a5cc;
-		border: none;
-		
-		/* -- CSS3 Transition - define which property to animate (i.e. the shadow)  -- */
-		-webkit-transition: -webkit-box-shadow 0.3s linear;
-		
-		/* -- CSS3 - Rounded Corners -- */
-		-moz-border-radius: 4px; 
-		-webkit-border-radius: 4px;
-		border-radius: 4px; 
-						
-		/* -- CSS3 Shadow - create a shadow around each input element -- */ 
-		background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#18a5cc), to(#0a85a8)); 
-		background: -moz-linear-gradient(25% 75% 90deg,#0a85a8, #18a5cc);		
-	} 
-	
-	input.submit:hover { 		
-		-webkit-box-shadow: 0px 0px 20px #555;
-		-moz-box-shadow: 0px 0px 20px #aaa; 
-		box-shadow: 0px 0px 20px #555;	
-		cursor:  pointer; 
-	}
-
-	select {
-		margin: 0px;
-		padding: 6px;
-		font-family: 'Yanone Kaffeesatz', arial, sans-serif;
-		font-size: 18px;
-		margin-bottom: 10px;
-		margin-right: 10px;
-	}
-
-	#container {
-		text-align: center;
-	}
-
-	h3 {
-		padding: 0px;
-		margin: 0px;
-	}
+.row-fluid {
+	font-size: 15px;
+}
