@@ -1,16 +1,16 @@
 #socialtootls {
-	position: relative;
+        position: relative;
 }
 #sharebutton {
 position: absolute;
 margin: 0px 0px 0px 280px;
 }
 .fb_share_count_nub_top {
-top: 29px !important;
+    top: 29px !important;
 }
 .fb_share_count_top {
-line-height: 28px !important;;
-font-size: 16px !important;;
+    line-height: 28px !important;;
+    font-size: 16px !important;;
 }
 /*1337373407,172653863,JIT Construction: v559610,en_US*/
 
@@ -82,14 +82,11 @@ a.FBConnectButton_RTL_Small:active{background-position:right -458px}
 
 #wrapper {
 	background: white;
-	box-shadow: 0 0 10px 2px #333;
-	border-top: none;
 	padding: 10px 20px 30px 20px;
-	margin: 20px 3%;
 	text-align:center;
 }
 
-li {
+#header li {
 	font-size: 17px;
 	list-style: none;
 	display: inline-block;
@@ -104,14 +101,14 @@ li {
 	transition: all 0.25s ease-in-out;
 }
 
-ul {
+#header ul {
 	background-color: black;
 	margin-top: 20px;
 	padding: 0px;
 	box-shadow: 0 0 5px black;
 }
 
-li:hover {
+#header li:hover {
 	-webkit-transition: all 0.25s ease-in-out;
 	-moz-transition: all 0.25s ease-in-out;
 	-o-transition: all 0.25s ease-in-out;
@@ -139,17 +136,6 @@ li:hover {
 	background-color: #7449f1;
 }
 
-body {
-	font-family: ubuntu,verdana,sans-serif;
-	color:#333;
-	background: #eee;
-}
-
-h1 {
-	font-size: 2em;
-}
-
-
 .fb-like {
 	margin: 50px;
 }
@@ -163,9 +149,9 @@ h1 {
 }
 
 h1 {
-	font-size: 30px;
 	padding: 20px 0;
 }
+
 
 .row-fluid {
 	font-size: 15px;

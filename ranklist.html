@@ -8,15 +8,15 @@
 	<meta property="og:description" content="JEE 2012 complete ranklist compiled by SDSLabs, IIT Roorkee"/>
 	<meta property="og:image" content="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-snc4/162003_182484805131346_636893991_n.jpg"/>
 	<meta property="fb:app_id" content="196618997019945"/>
+	<meta charset="utf-8"/> 
 	<title>JEE-2012	Results</title>
 	<meta name="google" content="notranslate"/>
-	<meta charset="utf-8"/> 
-	<link rel="stylesheet" href="./css/style.css">
-	<meta name="description" content="IIT JEE 2012 ranks of all candidates by name and analysis of selected candidates." />
-	<meta name="author" content="SDSLabs, IIT Roorkee" />
+	<meta name="sds" content="jee-2012-result"/>
+	<meta name="creator" content="sdslabs, IIT Roorkee"/>
 	<meta name="keywords" content="jee, iitjee, sdslabs, arpit, agarwal, engineering, technology, ranks, marks" />
+	<link rel="stylesheet" href="./css/style.css">
 </head>
-<body align="center">
+<body align="center" lang="en">
 	<div id="fb-root"></div>
 	<script>
 	  window.fbAsyncInit = function() {
@@ -42,49 +42,53 @@
 	<div id="wrapper">
 		<div id="header">
 			<ul align="center">
-				<a href="/jee/about.html"><li class="about">About</li></a>
+                <a href="/jee/about.html"><li class="about">About</li></a>
                 <a href="/jee/disclaimer.html"><li class="disclaimer">Disclaimer</li></a>
                 <a href="/jee/ranklist.html"><li class="results">Rank List</li></a>
                 <a href="/jee"><li class="courses">Course Allotment <sup class="super">NEW</sup></li></a>
-                <a href="/jee/graph/index.html"><li class="graphs">Analysis & Graphs</li></a>			
-            </ul>
+                <a href="/jee/graph/index.html"><li class="graphs">Analysis & Graphs</li></a>
+			</ul>
 			<h1>
-				About
+				JEE-2012 Rankwise Results
 			</h1>
-		</div>
-		<div id="container">
-			
-			<h3>
-				To view pretty analytics, graphs, marks distribution, <a href="./graph">Click Here</a>
-			</h3>
-			<p>
-				This listing was prepared by SDSLabs, IIT Roorkee. <br>
-				<a href="http://fb.com/sdslabs">SDSLabs</a> is a group of students in IIT-Roorkee  working on the forefront of innovation and new technology.<br>
-				We know you're here for the JEE listing. Go on <a href="index.html">here</a>. We won't tell anyone you checked their rank.
-				<p> - Team SDSLabs</p> <br />
-				Find us on <a href="http://fb.com/sdslabs">Facebook</a> and <a href="https://plus.google.com/101733513430697982016/" rel="me">Google +</a>
-			</p>
-		</div>
-<div id="socialtools">		
-	<div id="fbshare">
-			<a name="fb_share" type="box_count" share_url="http://jee.sdslabs.co/" id="sharebutton" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fjee.sdslabs.co%2F&amp;src=sp" style="text-decoration: none; ">
-				<span class="fb_share_size_Large fb_share_count_wrapper">
-					<span></span>
-					<span class="fb_share_count_nub_top "></span>
-					<span class="fb_share_count  fb_share_count_top">
-						<span class="fb_share_count_inner"></span>
+			</div>
+		<div id="socialtools">		
+			<div id="fbshare">
+				<a name="fb_share" type="box_count" share_url="http://jee.sdslabs.co/" id="sharebutton" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fjee.sdslabs.co%2F&amp;src=sp" style="text-decoration: none; ">
+					<span class="fb_share_size_Small fb_share_count_wrapper">
+						<span></span>
+						<span class="fb_share_count_nub_top "></span>
+						<span class="fb_share_count  fb_share_count_top">
+							<span class="fb_share_count_inner"></span>
+						</span>
+						<span class="FBConnectButton FBConnectButton_Small" style="cursor:pointer;">
+							<span class="FBConnectButton_Text">Share!</span></span>
 					</span>
-					<span class="FBConnectButton FBConnectButton_Small" style="cursor:pointer;">
-						<span class="FBConnectButton_Text">Share!</span></span>
-				</span>
-			</a>
-		</div>
+				</a>
+			</div>
 			<div style="margin:0px;" class="fb-like" data-href="https://www.facebook.com/SDSLabs" data-send="true" data-width="550" data-show-faces="true" data-font="trebuchet ms">
 			</div>
 		</div>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<div id="container">
+					
+			<h3>
+				To view pretty analytics, graphs, marks distribution, <a href="./graph">Click Here</a>
+			</h3>
+			<h4>
+				Tip: Use Ctrl+F to search for a Name/Rank/Registration number <br>
+				If you want to remove your name from this list please file a ticket using the feedback link at the bottom, or mail us at contact@sdslabs.co.in
+			</h4>
+				<div class="notranslate" align="center" id="tablecontainer">Please wait, loading results...</div>
+			<br>
+			
+		</div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	<script>
 		$.getJSON("http://graph.facebook.com/?id=http://jee.sdslabs.co/",function(x){$('.fb_share_count_inner').text(x.shares)})
+	</script>
+	<script>
+		$.get('list.html',function(d){$('#tablecontainer').html(d);});
 	</script>
 	<div>
 				<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-nd/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Dataset" property="dct:title" rel="dct:type">IIT JEE 2012 Listings</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://jee.sdslabs.co/" property="cc:attributionName" rel="cc:attributionURL">SDSLabs</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/">Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License</a>.<br />Permissions beyond the scope of this license may be available at <a xmlns:cc="http://creativecommons.org/ns#" href="http://facebook.com/sdslabs" rel="cc:morePermissions">http://facebook.com/sdslabs</a>.

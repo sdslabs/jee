@@ -109,7 +109,7 @@ requirejs(['jquery','d3','text!../data/course.csv'],($,d3=window.d3,CoursesCSV)-
         #Rank Stuff
         ranks=''
         ranks+=" #{user.cml} (AIR)" if user.cml>0
-        ranks+=" #{user.category} (#{user.category})" if user.category_rank>0
+        ranks+=" #{user.category_rank} (#{user.category})" if user.category_rank>0
         ranks+=" #{user.pd_rank} (#{user.category}_PD)" if user.pd_rank>0
 
         #Marks stuff
@@ -139,5 +139,6 @@ requirejs(['jquery','d3','text!../data/course.csv'],($,d3=window.d3,CoursesCSV)-
     console.log("Ready")
     $.getJSON "http://jee.sdslabs.co/removed.php?callback=?", (data)->
       $.removed = data
+      $('#refresh').text('Render')
       $('#air_max').trigger('change')
 )
