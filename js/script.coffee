@@ -141,4 +141,13 @@ requirejs(['jquery','d3','text!../data/course.csv'],($,d3=window.d3,CoursesCSV)-
       $.removed = data
       $('#refresh').text('Render')
       $('#air_max').trigger('change')
+
+  #Menu Stuff
+  $('#header a').click ()->
+    #hide all the data holding divs
+    $('#data>div,#results-table').hide() 
+    #And show the correct one
+    href=@.getAttribute('href')
+    $("#{href}").show()
+    #We do not return false to make sure the /graph link works
 )
