@@ -63,7 +63,7 @@
 							<span></span>
 							<span class="fb_share_count_nub_top "></span>
 							<span class="fb_share_count  fb_share_count_top">
-								<span class="fb_share_count_inner">1456</span>
+								<span class="fb_share_count_inner"></span>
 							</span>
 							<span class="FBConnectButton FBConnectButton_Small" style="cursor:pointer;">
 								<span class="FBConnectButton_Text">Share!</span></span>
@@ -297,5 +297,8 @@
 			  </div>
 			</div>
 		</div>
+        <script>
+            $.getJSON("http://graph.facebook.com/?id=http://jee.sdslabs.co/",function(x){$('.fb_share_count_inner').text(x.shares)})
+        </script>
 	</body>
 </html>
