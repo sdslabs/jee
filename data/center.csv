@@ -1,5 +1,5 @@
 code,city,state
-101	,panaji,GOA
+101	,Panaji,GOA
 102	,Ahmedabad,GUJARAT
 103	,Rajkot,GUJARAT
 104	,Surat,GUJARAT
@@ -71,10 +71,8 @@ code,city,state
 510	,Balasore,ORISSA
 511	,Berhampur,ORISSA
 512	,Bhubaneswar,ORISSA
-512	,Bhubaneswar,TRIPURA
 513	,Cuttack,ORISSA
 514	,Rourkela,ORISSA
-514	,Rourkela,ORRISA
 515	,Sambalpur,ORISSA
 516	,Gangtok,SIKKIM
 517	,Agartala ,TRIPURA
@@ -131,6 +129,5 @@ code,city,state
 720	,Ghaziabad,UTTAR PRADESH
 721	,Meerut,UTTAR PRADESH
 722	,Moradabad,UTTAR PRADESH
-723	,Saharanpur,UTTAR PRADESH
 723	,Saharanpur,UTTRAKHAND
 724	,Varanasi,UTTAR PRADESH
