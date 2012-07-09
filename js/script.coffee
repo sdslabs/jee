@@ -41,7 +41,7 @@ requirejs(['jquery','d3','text!../data/course.csv'],($,d3=window.d3,CoursesCSV)-
     #filterBranches is the costliest client side operation
     #It is performed only when needed
     Results.filterBranches = (branchCodes)->
-      (i.filter=false for i in @ when (i.alloted2 not in branchCodes))
+      (i.filter=false for i in @ when (i.alloted3 not in branchCodes))
       @
     Results.filterAIR = (lower,upper) ->
       (i.filter=false for i in @ when (i.cml<lower || i.cml>upper))
@@ -103,7 +103,6 @@ requirejs(['jquery','d3','text!../data/course.csv'],($,d3=window.d3,CoursesCSV)-
     #content over ajax
     Results.toString =() ->
       html=''
-      testStart = new Date();
       for user in @
         continue unless user.filter
         #Rank Stuff
@@ -117,20 +116,33 @@ requirejs(['jquery','d3','text!../data/course.csv'],($,d3=window.d3,CoursesCSV)-
         marks="#{user.marks} (#{user.physics}+#{user.chemistry}+#{user.maths})" if user.marks!=0
 
         #Course stuff
+
+        #Initialize the variables so they don't carry over
+
+        course1 = course2 = course3 = alloted = alloted2 = alloted3 = ' - '
+
         courseId1 = Courses.codes.indexOf(user.alloted) if user.alloted!=''
         courseId2 = Courses.codes.indexOf(user.alloted2) if user.alloted2!=''
+        courseId3 = Courses.codes.indexOf(user.alloted3) if user.alloted3!=''
+
         alloted = "#{Courses[courseId1].branch}, #{Courses[courseId1].institute}" if user.alloted!=''
-        alloted2 = "#{Courses[courseId2].branch}, #{Courses[courseId2].institute}" if user.alloted2 !=''
+        alloted2 = "#{Courses[courseId2].branch}, #{Courses[courseId2].institute}" if user.alloted2!=''
+        alloted3 = "#{Courses[courseId3].branch}, #{Courses[courseId3].institute}" if user.alloted3!=''
+
         course1 = Courses[courseId1].course if user.alloted!=''
         course2 = Courses[courseId2].course if user.alloted2!=''
+        course3 = Courses[courseId3].course if user.alloted3!=''
         center = $("#center option[value='#{user.center}']").text() if user.center
+
         user.name = "Name removed on request" if user.reg in $.removed
+
         html+="<tr>
             <td>#{ranks}</td>
             <td>#{user.name}</td>
             <td>#{user.category}</td>
             <td title=\"#{course1 ? ''}\">#{alloted ? ' - ' }</td>
             <td title=\"#{course2 ? ''}\">#{alloted2 ? ' - ' }</td>
+            <td title=\"#{course3 ? ''}\">#{alloted3 ? ' - ' }</td>
             <td>#{center ? "N/A"}</td>
             <td>#{marks}</td>
             <td>#{user.sex}</td>
