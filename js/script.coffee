@@ -91,7 +91,7 @@ requirejs(['jquery','d3','text!../data/course.csv'],($,d3=window.d3,CoursesCSV)-
     $('#refresh').click ()->
       name=$('#q').val()
       if(name.length>3)
-        $.getJSON "http://jee.sdslabs.co/find.php?callback=?", {q:name},(data)->
+        $.getJSON "http://iit-jee-sdslabs.elasticbeanstalk.com/find.php?callback=?", {q:name},(data)->
           Results.filterReg data
           updateTotal()
           showResults()
@@ -149,7 +149,7 @@ requirejs(['jquery','d3','text!../data/course.csv'],($,d3=window.d3,CoursesCSV)-
           </tr>"
       html
     console.log("Ready")
-    $.getJSON "http://jee.sdslabs.co/removed.php?callback=?", (data)->
+    $.getJSON "http://iit-jee-sdslabs.elasticbeanstalk.com/removed.php?callback=?", (data)->
       $.removed = data
       $('#refresh').text('Render')
       $('#air_max').trigger('change')
