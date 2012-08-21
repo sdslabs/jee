@@ -89,13 +89,13 @@ requirejs(['jquery','d3','text!../data/course.csv'],($,d3=window.d3,CoursesCSV)-
       $('#results').html(Results.toString()) if confirm
 
     $('#refresh').click ()->
-      name=$('#q').val()
-      if(name.length>3)
-        $.getJSON "http://iit-jee-sdslabs.elasticbeanstalk.com/find.php?callback=?", {q:name},(data)->
-          Results.filterReg data
-          updateTotal()
-          showResults()
-        return
+      #name=$('#q').val()
+      #if(name.length>3)
+        #$.getJSON "http://iit-jee-sdslabs.elasticbeanstalk.com/find.php?callback=?", {q:name},(data)->
+        #  Results.filterReg data
+        #updateTotal()
+        #showResults()
+        #return
       showResults()
       false
     #This is the main csv parser for results
@@ -134,7 +134,7 @@ requirejs(['jquery','d3','text!../data/course.csv'],($,d3=window.d3,CoursesCSV)-
         course3 = Courses[courseId3].course if user.alloted3!=''
         center = $("#center option[value='#{user.center}']").text() if user.center
 
-        user.name = "Name removed on request" if user.reg in $.removed
+        #user.name = "Name removed on request" if user.reg in $.removed
 
         html+="<tr>
             <td>#{ranks}</td>
@@ -149,8 +149,8 @@ requirejs(['jquery','d3','text!../data/course.csv'],($,d3=window.d3,CoursesCSV)-
           </tr>"
       html
     console.log("Ready")
-    $.getJSON "http://iit-jee-sdslabs.elasticbeanstalk.com/removed.php?callback=?", (data)->
-      $.removed = data
-      $('#refresh').text('Render')
-      $('#air_max').trigger('change')
+    #$.getJSON "http://iit-jee-sdslabs.elasticbeanstalk.com/removed.php?callback=?", (data)->
+    #  $.removed = data
+    $('#refresh').text('Render')
+    $('#air_max').trigger('change')
 )
