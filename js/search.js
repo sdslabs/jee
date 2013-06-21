@@ -23,14 +23,21 @@ $(function(){
         console.timeEnd("load")
      })
 
-
-	submit.on('click', function(){
+	var search = function(){
 		var query = input.val();
 		var res = idx.search(query).map(function(result){
 			return results.filter(function(d){ return d.regno === parseInt(result.ref); })[0];
 		})
 		display(res);
-	})
+	}
+
+
+	submit.on('click',search);
+	input.on('keypress',function(e){
+		if(e.which == 13){
+			search();
+		}
+	});
 
 	var display = function(results){
 		$('.search-result').html('');
@@ -41,4 +48,5 @@ $(function(){
 		$('.search-result').append('<table>'+html+'</table>');
 	}
 
+	
 })

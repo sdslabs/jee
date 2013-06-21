@@ -299,3 +299,24 @@ form {
 		padding: 0px;
 		margin: 0px;
 	}
+
+	div.search-result table{
+		margin:0 auto;
+	}
+
+	input.search-box{
+		width:300px;
+		border:1px solid #ddd;
+		border-top-left-radius:1em;
+		border-bottom-left-radius:1em;
+		color:#222;
+		outline:none;
+	}
+	input.search-box:hover{
+		background:#fff;
+		outline:none;
+	}
+	input.search-box:focus{
+		background:#fff;
+		outline:none;
+	}
