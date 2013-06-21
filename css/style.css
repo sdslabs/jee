@@ -154,6 +154,10 @@ li:hover {
 	background-color: #7449f1;
 }
 
+#socialtools{
+	min-height: 65px;
+}
+
 p {
 	padding: 0px 25%;
 	text-align: justify;
