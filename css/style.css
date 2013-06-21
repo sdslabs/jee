@@ -8,7 +8,7 @@ body {
 }
 #sharebutton {
 position: absolute;
-margin: 0px 0px 0px 280px;
+margin: 0px 0px 0px 250px;
 }
 .fb_share_count_nub_top {
 top: 29px !important;
@@ -74,7 +74,7 @@ a.FBConnectButton_RTL_Small:active{background-position:right -458px}
 .FBConnectButton_Inactive{-ms-filter:'alpha(opacity=40)';filter:alpha(opacity = 40);-khtml-opacity:.4;-moz-opacity:.4;opacity:.4}
 .fb_share_count_wrapper{position:relative;float:left}
 .fb_share_count{background:#b0b9ec none repeat scroll 0 0;color:#333;font-family:"lucida grande",tahoma,verdana,arial,sans-serif;text-align:center}
-.fb_share_count_inner{background:#e8ebf2;display:block}
+.fb_share_count_inner{background:#e8ebf2;display:block; min-height: 28px;}
 .fb_share_count_right{margin-left:-1px;display:inline-block}
 .fb_share_count_right .fb_share_count_inner{border-top:solid 1px #e8ebf2;border-bottom:solid 1px #b0b9ec;margin:1px 1px 0 1px;font-size:10px;line-height:10px;padding:2px 6px 3px;font-weight:bold}
 .fb_share_count_top{display:block;letter-spacing:-1px;line-height:34px;margin-bottom:7px;font-size:22px;border:solid 1px #b0b9ec}
