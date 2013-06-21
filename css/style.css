@@ -1,7 +1,9 @@
 body {
 	font-family: ubuntu,verdana,sans-serif;
-	color:#333;
-	background: #eee;
+	color:#464646;
+	background: white;
+	margin: 0px;
+	background-image: url('../img/debut_light.png');
 }
 #socialtootls {
 	position: relative;
@@ -85,12 +87,29 @@ a.FBConnectButton_RTL_Small:active{background-position:right -458px}
 .fb_share_size_Medium .fb_share_count_right .fb_share_count_inner{font-size:11px;padding:2px 6px 3px;letter-spacing:-1px;line-height:14px}
 .fb_share_size_Large .fb_share_count_right .fb_share_count_inner{font-size:13px;line-height:16px;padding:2px 6px 4px;font-weight:normal;letter-spacing:-1px}
 
+.logo {
+	position: absolute;
+	margin-top: -60px;
+	margin-left: 10%;
+}
+
+.logo img {
+	width: 140px;
+}
+
+#header a {
+	color: white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #464646;
+}
+
 #wrapper {
-	background: white;
-	box-shadow: 0 0 10px 2px #333;
+	/*box-shadow: 0 0 10px 2px #333;*/
 	border-top: none;
-	padding: 10px 20px 30px 20px;
-	margin: 20px 3%;
+	/*padding: 10px 20px 30px 20px;*/
+	/*margin: 20px 3%;*/
 	text-align:center;
 }
 
@@ -120,10 +139,10 @@ li {
 }
 
 ul {
-	background-color: black;
-	margin-top: 20px;
+	background-color: rgb(71, 145, 194);
+	margin-top: -10px;;
 	padding: 0px;
-	box-shadow: 0 0 5px black;
+	box-shadow: 0 0 5px rgb(71, 145, 194);
 }
 
 li:hover {
@@ -156,12 +175,13 @@ li:hover {
 
 #socialtools{
 	min-height: 65px;
+	margin-top: 50px;
 }
 
 p {
 	padding: 0px 25%;
 	text-align: justify;
-	font-family: sans-serif;
+	font-family: ubuntu,verdana,sans-serif;
 	font-size: 18px;
 }
 
@@ -177,7 +197,7 @@ tr:nth-child(even) {
 	background-color: #eeeeee;
 }
 a{
-color:#58a;
+color: rgb(71, 145, 194);
 }
 
 #fbshare {
