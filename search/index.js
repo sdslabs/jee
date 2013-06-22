@@ -20,11 +20,13 @@ fs.readFile('../json/results.json', function (err, data) {
     }
   })
 
+  console.log(results[0])
+
   results.forEach(function (result) {
     idx.add(result)
   })
 
-  fs.writeFile('../json/results_index_2.json', JSON.stringify(idx), function (err) {
+  fs.writeFile('../json/results_index_3.json', JSON.stringify(idx), function (err) {
     if (err) throw err
     console.log('done')
   })
