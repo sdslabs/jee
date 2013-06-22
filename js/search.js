@@ -71,8 +71,12 @@ $(function(){
 			if(res.indexOf(x.rollno)>-1)
 				return true;
 		});
-        console.log(res);
-		display(res);
+		console.log(res);
+		$('#tablecontainer').remove();
+		if (res.length==0)
+			$('.search-result').html('Sorry, no results found!');
+		else
+			display(res);
 	}
 
 
