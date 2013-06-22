@@ -11,14 +11,14 @@ var lazy=require("lazy"),
           var res = {};
           res["rollno"] = arr[2];
           res["name"] = arr[1];
-          res["air"] = parseInt(arr[0]);
+          res["air"] = arr[0];
           results.push(res);
 
           // console.log(res["air"]+'done');
         }).on('pipe', function(){
           console.log(results[0]);
 
-          fs.writeFile('./../json/rawtojson.json', JSON.stringify({'results':results}), function (err) {
+          fs.writeFile('./../json/results_new.json', JSON.stringify({'results':results}), function (err) {
             if (err) throw err
             console.log('done')
           })
