@@ -321,7 +321,7 @@ form {
 	}
 
 	div.search-result table{
-		margin:0 auto;
+		margin:20px auto;
 	}
 
 	input.search-box{
@@ -339,4 +339,8 @@ form {
 	input.search-box:focus{
 		background:#fff;
 		outline:none;
+	}
+	input.search-submit{
+		border-top-right-radius:1em;
+		border-bottom-right-radius:1em;
 	}

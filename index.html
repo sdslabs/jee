@@ -78,12 +78,19 @@
 				<strong>This List is not exhausative, we will continue to update it</strong><br>
 				We take no guarantee of the information displayed below. <br> Please check the official <a href="http://jeeadv.iitd.ac.in/">JEE Advanced Website</a> for your result. <br> <a href="disclaimer.html">Full Disclaimer</a> 
 			</h4>
+				<div class="search-wrap">
+					<input type="search" class="search-box" placeholder="Enter Name / AIR"><input type="submit" value="Search" class="search-submit">
+					<div class="search-result"></div>
+				</div>
+
 				<div class="notranslate" align="center" id="tablecontainer">Please wait, loading results...</div>
 			<br>
 			
 		</div>
 	</div>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+	<script src="js/lunr.min.js"></script>
+	<script src="js/search.js"></script>
 	<script>
 		$.getJSON("http://graph.facebook.com/?id=http://jee.sdslabs.co/",function(x){$('.fb_share_count_inner').text(x.shares)})
 	</script>

@@ -85,7 +85,7 @@ $(function(){
 
 	var display = function(results){
 		$('.search-result').html('');
-		var html = '<tr><th>Reg No</th><th>Name</th><th>Rank</th></tr>';
+		var html = '<tr><th colspan="3">Search Results</th></tr><tr><th>Reg No</th><th>Name</th><th>Rank</th></tr>';
 		for(i in results){
 			html += '<tr><td>' + results[i].rollno + '</td><td>' + results[i].name + '</td><td>' + results[i].air + '</td></tr>';
 		}
