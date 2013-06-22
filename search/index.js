@@ -7,7 +7,7 @@ var idx = lunr(function () {
   this.field('air')
 })
 
-fs.readFile('../json/results.json', function (err, data) {
+fs.readFile('../json/results_new.json', function (err, data) {
   if (err) throw err
 
   var raw = JSON.parse(data)
@@ -26,7 +26,7 @@ fs.readFile('../json/results.json', function (err, data) {
     idx.add(result)
   })
 
-  fs.writeFile('../json/results_index_3.json', JSON.stringify(idx), function (err) {
+  fs.writeFile('../json/results_index_new.json', JSON.stringify(idx), function (err) {
     if (err) throw err
     console.log('done')
   })
