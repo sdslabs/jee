@@ -59,24 +59,27 @@ $(function(){
 
 	var search = function(){
 		var query = input.val();
-		var res = idx.search(query);
-		//Convert the search results to an array of integers
-		res=res.map(function(x){
-			return x.ref
-		});
-        console.log(res);
-       
-		//Filter the results to only matching rollnumbers
-		res=results.filter(function(x){
-			if(res.indexOf(x.rollno)>-1)
-				return true;
-		});
-		console.log(res);
-		$('#tablecontainer').remove();
-		if (res.length==0)
-			$('.search-result').html('Sorry, no results found!');
-		else
-			display(res);
+		if (query != '') {
+			var res = idx.search(query);
+			//Convert the search results to an array of integers
+			res=res.map(function(x){
+				return x.ref;
+			});
+			//Filter the results to only matching rollnumbers
+			res=results.filter(function(x){
+				if(res.indexOf(x.rollno)>-1)
+					return true;
+			});
+			$('#tablecontainer').hide();
+			if (res.length==0)
+				$('.search-result').html('Sorry, no results found!');
+			else
+				display(res);
+		}
+		else {
+			$('#tablecontainer').show();
+			$('.search-result').html('');
+		}
 	}
 
 
