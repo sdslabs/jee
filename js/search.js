@@ -89,9 +89,10 @@ $(function(){
 
 	var display = function(results){
 		$('.search-result').html('');
-		var html = '<tr><th colspan="3">Search Results</th></tr><tr><th>Reg No</th><th>Name</th><th>Rank</th></tr>';
+
+		var html = '<tr><th colspan="3">Results Found: '+ results.length +'</th></tr><tr><th>AIR</th><th>Name</th><th>Roll No</th></tr>';
 		for(i in results){
-			html += '<tr><td>' + results[i].rollno + '</td><td>' + results[i].name + '</td><td>' + results[i].air + '</td></tr>';
+			html += '<tr><td>' + results[i].air + '</td><td>' + results[i].name + '</td><td>' + results[i].rollno + '</td></tr>';
 		}
 		$('.search-result').append('<table>'+html+'</table>');
 	}
