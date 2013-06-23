@@ -13,7 +13,7 @@ requirejs(['jquery','d3','text!../data/course.csv'],($,d3=window.d3,CoursesCSV)-
     (course.code for course in @ when (course.code && course.code.substr(0,1)==instiCode))
 
   #File is actually a csv, we masquerade it as json to gzip encode it on github pages
-  d3.csv 'data/results.json', (Results)->
+  d3.csv '../data/results.json', (Results)->
     Results.forEach (d,i)->
       d.reg=+d.reg
       d.cml=+d.cml
