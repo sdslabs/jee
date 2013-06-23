@@ -344,3 +344,58 @@ form {
 		border-top-right-radius:1em;
 		border-bottom-right-radius:1em;
 	}
+
+	#state {
+		margin: 1%;
+		padding: 0;
+		width: 97%;
+	}
+
+	#last_yr, #current {
+   		float: left;
+   		width: 46.5%;
+   		margin: 1% 0 1% 1%;
+   		padding: 1%;
+	}
+
+	#current {
+		float: right;
+		margin: 1% 1% 1% 0;
+	}
+
+	#state_pie {
+		margin: 1%;
+		padding: 0;
+		width: 97%;
+	}
+
+	#last_yr1, #current1 {
+   		float: left;
+   		height: 97%;
+   		width: 46.5%;
+   		margin: 1% 0 1% 1%;
+   		padding: 1%;
+	}
+
+	#current1 {
+		float: right;
+		margin: 1% 1% 1% 0;
+	}
+
+	#age {
+		margin: 1%;
+		padding: 0;
+		width: 97%;
+	}
+
+	#last_yr2, #current2 {
+   		float: left;
+   		width: 46.5%;
+   		margin: 1% 0 1% 1%;
+   		padding: 1%;
+	}
+
+	#current2 {
+		float: right;
+		margin: 1% 1% 1% 0;
+	}
