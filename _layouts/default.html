@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% if page.pTitle %} 
+	<meta property="og:title" content= {{page.pTitle}} />
+	{% endif %}
+	<title>{{page.title}}</title>
+	<link rel="stylesheet" href="./css/style.css"><!-- change later -->
+</head>
+<body align="center" lang="en">
+	{{ content }}
+</body>
+</html>

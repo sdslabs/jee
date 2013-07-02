@@ -1,0 +1,56 @@
+---
+layout: default
+
+year : 2013
+title: JEE Advanced 2013 Results
+pTitle : JEE 2013 Ranklist
+pType : website
+pUrl : http://jee.sdslabs.co/
+pDescription : JEE 2013 complete ranklist compiled by SDSLabs, IIT Roorkee
+pImage : http://jee.sdslabs.co/img/logo.png
+pFb:app_id : 196618997019945
+pKeywords : jee, iitjee, sdslabs, IIT JEE namewise, JEE Adanced 2013
+
+---
+<!-- Content
+    ================================================== -->
+<div id="fb-root"></div>
+{% include FBLikesScript.html %}
+<div id="wrapper">
+	<h1>
+		JEE Advanced 2013 Namewise Results
+	</h1>
+
+	<div id="header">
+		{% include header.html %}
+	</div>
+	<div id="socialtools">
+		{% include socialtools.html %}
+	</div>
+	<div id="container">
+
+			<h4 style="font-weight: 300;font-size: 0.9em;">
+				{% include disclaimerSmall.html %}
+			</h4>
+				<div class="search-wrap">
+					<input type="search" class="search-box" placeholder="Enter Name / AIR"><input type="submit" value="Search" class="search-submit">
+					<div class="search-result"></div>
+				</div>
+
+				<div class="notranslate" align="center" id="tablecontainer">Please wait, loading results...</div>
+			<br>
+			
+		</div>
+
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script src="js/lunr.min.js"></script>
+<script src="js/search.js"></script>
+<script>
+	$.getJSON("http://graph.facebook.com/?id=http://jee.sdslabs.co/",function(x){$('.fb_share_count_inner').text(x.shares)})
+</script>
+<script>
+	$.get('list_2.html',function(d){$('#tablecontainer').html(d);});
+</script>
+{% include footer.html %}
+<br>
