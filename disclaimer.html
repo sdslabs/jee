@@ -1,0 +1,66 @@
+---
+layout: default
+title: JEE Advanced 2013 Results
+year : 2013
+meta:
+  - key: title
+    value: JEE 2013 Ranklist
+  - key: site_name
+    value: SDSLabs, IIT Roorkee
+  - key: type
+    value: website
+  - key: url
+    value: http//jee.sdslabs.co/
+  - key: description
+    value: JEE 2013 complete ranklist compiled by SDSLabs, IIT Roorkee
+  - key: image
+    value: https://fbcdn-profile-a.akamaihd.net/hprofile-ak-snc4/162003_182484805131346_636893991_n.jpg
+  - key: fbapp_id
+    value: 196618997019945
+  - key: Keywords
+    value: jee, iitjee, sdslabs, IIT JEE namewise, JEE Adanced 2013
+  - key: sds
+    value: jee-2013-result
+  - key: creator
+    value: sdslabs, IIT Roorkee
+  - key: google
+    value: notranslate
+link:
+  - rel: stylesheet
+    href: ./css/style.css
+  - rel: shortcut icon
+    href: img/favicon.ico
+---
+<!-- Content
+    ================================================== -->
+<div id="fb-root"></div>
+{% include FBLikesScript.html %}
+<div id="wrapper">
+	<h1>
+		JEE Advanced 2013 Namewise Results
+	</h1>
+
+	<div id="header">
+		{% include header.html %}
+	</div>
+  <div id="container">
+
+      <p>
+        As per JEE 2009 RTI ruling given <a href="http://jee.iitr.ernet.in/images/SG-06112009-10.pdf">here</a>, <strong>Name, Rank and Roll No.</strong> fall under public domain and can be released publicly. The method used for obtaining the rank list can be read <a href="http://qr.ae/pxVn2">here</a>.
+      </p>
+      <p>
+        The information contained in this website is for general information purposes only. While we endeavour to keep the information up to date and correct, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability or availability with respect to the website or the information or services contained on the website for any purpose. In no event will we be liable for any loss or damage including without limitation, indirect or consequential loss or damage, or any loss or damage whatsoever arising from loss of data or profits arising out of, or in connection with, the use of this website. Every effort is made to keep the website up and running smoothly. However, we take no responsibility for, and will not be liable for, the website being temporarily unavailable due to technical issues beyond our control.
+      </p>
+      
+  </div>
+	<div id="socialtools">
+		{% include socialtools.html %}
+	</div>
+
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script>
+    $.getJSON("http://graph.facebook.com/?id=http://jee.sdslabs.co/",function(x){$('.fb_share_count_inner').text(x.shares)})
+</script>
+{% include footer.html %}
+<br>
