@@ -1,0 +1,2 @@
+auto: true # automatically update your jekyll
+server: true # runs a local server
