@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	{% if page.pTitle %} 
-	<meta property="og:title" content= {{page.pTitle}} />
-	{% endif %}
+	{% for item in page.meta %}
+		<meta property="og:{{ item.key }}" content="{{ item.value }}"/>
+	{% endfor %}
+
 	<title>{{page.title}}</title>
-	<link rel="stylesheet" href="./css/style.css"><!-- change later -->
+	{% for item in page.css %}
+	<link rel="stylesheet" href="{{item.link}}">
+	{% endfor %}
 </head>
 <body align="center" lang="en">
 	{{ content }}
