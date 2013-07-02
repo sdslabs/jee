@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+		<meta property="og:title" content="JEE 2013 Ranklist"/>
+	
+		<meta property="og:site_name" content="SDSLabs, IIT Roorkee"/>
+	
+		<meta property="og:type" content="website"/>
+	
+		<meta property="og:url" content="http//jee.sdslabs.co/"/>
+	
+		<meta property="og:description" content="JEE 2013 complete ranklist compiled by SDSLabs, IIT Roorkee"/>
+	
+		<meta property="og:image" content="http://jee.sdslabs.co/img/logo.png"/>
+	
+		<meta property="og:fbapp_id" content="196618997019945"/>
+	
+		<meta property="og:Keywords" content="jee, iitjee, sdslabs, IIT JEE namewise, JEE Adanced 2013"/>
+	
+		<meta property="og:sds" content="jee-2013-result"/>
+	
+		<meta property="og:creator" content="sdslabs, IIT Roorkee"/>
+	
+		<meta property="og:google" content="notranslate"/>
+	
+	<meta charset="utf-8"/> 
+	<title>JEE Advanced 2013 Results</title>
+	
+		<link rel="stylesheet" href="./css/style.css">
+	
+		<link rel="shortcut icon" href="img/favicon.ico">
+	
+</head>
+<body align="center" lang="en">
+	<!-- Content
+    ================================================== -->
+<div id="fb-root"></div>
+<script>
+	  window.fbAsyncInit = function() {
+	    FB.init({
+	      appId      : '196618997019945', // App ID
+	      status     : true, // check login status
+	      cookie     : true, // enable cookies to allow the server to access the session
+	      xfbml      : true  // parse XFBML
+	    });
+
+	    // Additional initialization code here
+	  };
+	  // Load the SDK Asynchronously
+	  (function(d){
+	     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+	     if (d.getElementById(id)) {return;}
+	     js = d.createElement('script'); js.id = id; js.async = true;
+	     js.src = "//connect.facebook.net/en_US/all.js";
+	     ref.parentNode.insertBefore(js, ref);
+	   }(document));
+	</script>
+<div id="wrapper">
+	<h1>
+		JEE Advanced 2013 Namewise Results
+	</h1>
+
+	<div id="header">
+		<div class="logo"><a href="http://facebook.com/SDSlabs"><img src="img/logo.png" alt=""></a>
+	</div>
+	
+	<ul align="center">
+           		<a href="about.html" target="_blank"><li class="about">About</li></a>
+				<a href="disclaimer.html" target="_blank"><li class="disclaimer">Disclaimer</li></a>
+				<a href="index.html" target="_blank"><li class="results">Rank List</li></a>
+				<a href="./graph/index.html" target="_blank"><li class="graphs">Analysis & Graphs</li></a>
+				<a href="./2012/index.html" target="_blank"><li class="courses">2012 Results</li></a>
+				<!--<a href="/"><li class="courses">Course Allotment <sup class="super">NEW</sup></li></a>
+				<a href="/graph/index.html" target="_blank"><li class="graphs">Analysis & Graphs</li></a>-->
+	</ul>
+	</div>
+	<div id="socialtools">
+				
+			<div id="fbshare">
+				<a name="fb_share" type="box_count" share_url="http://jee.sdslabs.co/" id="sharebutton" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fjee.sdslabs.co%2F&amp;src=sp" style="text-decoration: none; ">
+					<span class="fb_share_size_Small fb_share_count_wrapper">
+						<span></span>
+						<span class="fb_share_count_nub_top "></span>
+						<span class="fb_share_count  fb_share_count_top">
+							<span class="fb_share_count_inner"></span>
+						</span>
+						<span class="FBConnectButton FBConnectButton_Small" style="cursor:pointer;">
+							<span class="FBConnectButton_Text">Share!</span></span>
+					</span>
+				</a>
+			</div>
+			<div style="margin:0px;" class="fb-like" data-href="https://www.facebook.com/SDSLabs" data-send="true" data-width="550" data-show-faces="true" data-font="trebuchet ms">
+			</div>
+
+	</div>
+	<div id="container">
+
+			<h4 style="font-weight: 300;font-size: 0.9em;">
+				We take no guarantee of the information displayed below. <br> Please check the official <a href="http://jeeadv.iitd.ac.in/">JEE Advanced Website</a> for your result. <br><br> <a href="disclaimer.html">Full Disclaimer</a> 
+			</h4>
+				<div class="search-wrap">
+					<input type="search" class="search-box" placeholder="Enter Name / AIR"><input type="submit" value="Search" class="search-submit">
+					<div class="search-result"></div>
+				</div>
+
+				<div class="notranslate" align="center" id="tablecontainer">Please wait, loading results...</div>
+			<br>
+			
+		</div>
+
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script src="js/lunr.min.js"></script>
+<script src="js/search.js"></script>
+<script>
+	$.getJSON("http://graph.facebook.com/?id=http://jee.sdslabs.co/",function(x){$('.fb_share_count_inner').text(x.shares)})
+</script>
+<script>
+	$.get('list_2.html',function(d){$('#tablecontainer').html(d);});
+</script>
+<div>
+				<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-nd/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Dataset" property="dct:title" rel="dct:type">IIT JEE 2013 Listings</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://jee.sdslabs.co/" property="cc:attributionName" rel="cc:attributionURL">SDSLabs</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/">Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License</a>.<br />Permissions beyond the scope of this license may be available at <a xmlns:cc="http://creativecommons.org/ns#" href="http://facebook.com/sdslabs" rel="cc:morePermissions">http://facebook.com/sdslabs</a>.
+</div>
+<br>
+</body>
+</html>
