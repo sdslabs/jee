@@ -1,50 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css"></link>
-		<link href="../css/harshil.css" rel="stylesheet" type="text/css"></link>
+---
+layout: default
+pathtoroot: ../
+title: JEE-2012 Results
+year : 2012
+meta:
+  - key: title
+    value: JEE 2012 Ranklist &amp; Course Allotment
+  - key: site_name
+    value: SDSLabs, IIT Roorkee
+  - key: type
+    value: website
+  - key: url
+    value: http//jee.sdslabs.co/
+  - key: description
+    value: JEE 2012 Course Allotment &amp; complete ranklist compiled by SDSLabs, IIT Roorkee
+  - key: image
+    value: https://fbcdn-profile-a.akamaihd.net/hprofile-ak-snc4/162003_182484805131346_636893991_n.jpg
+  - key: fbapp_id
+    value: 196618997019945
+  - key: Keywords
+    value: jee, iitjee, sdslabs, arpit, agarwal, engineering, technology, ranks, marks
+  - key: creator
+    value: sdslabs, IIT Roorkee
+  - key: google
+    value: notranslate
+link:
+  - rel: stylesheet
+    href: ../css/bootstrap.min.css
+  - rel: stylesheet
+    href: ../css/harshil.css
+  - rel: icon
+    href: ../favicon.ico
+---
+
+		
 		<script data-main="../js/cs!script" src="../js/require-jquery.js"></script>
-		<title>JEE-2012 Ranklist</title>
-		<meta property="og:title" content="JEE 2012 Ranklist &amp; Course Allotment"/>
-		<meta property="og:site_name" content="SDSLabs, IIT Roorkee"/>
-		<meta property="og:type" content="website"/>
-		<meta property="og:url" content="http://jee.sdslabs.co/"/>
-		<meta property="og:description" content="JEE 2012 Course Allotment &amp; complete ranklist compiled by SDSLabs, IIT Roorkee"/>
-		<meta property="og:image" content="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-snc4/162003_182484805131346_636893991_n.jpg"/>
-		<meta property="fb:app_id" content="196618997019945"/>
-		<meta name="google" content="notranslate"/>
-		<meta charset="utf-8"/> 
-		<meta name="description" content="IIT JEE 2012 ranks of all candidates by name and analysis of selected candidates." />
-		<meta name="author" content="SDSLabs, IIT Roorkee" />
-		<meta name="keywords" content="jee, iitjee, sdslabs, arpit, agarwal, engineering, technology, ranks, marks" />
-		<link rel="icon" href="../favicon.ico">
-	</head>
-	<body>
 		<div id="fb-root"></div>
-		<script>
-		  window.fbAsyncInit = function() {
-		    FB.init({
-		      appId      : '196618997019945', // App ID
-		      status     : true, // check login status
-		      cookie     : true, // enable cookies to allow the server to access the session
-		      xfbml      : true  // parse XFBML
-		    });
-
-		    // Additional initialization code here
-		  };
-
-		  // Load the SDK Asynchronously
-		  (function(d){
-		     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
-		     if (d.getElementById(id)) {return;}
-		     js = d.createElement('script'); js.id = id; js.async = true;
-		     js.src = "//connect.facebook.net/en_US/all.js";
-		     ref.parentNode.insertBefore(js, ref);
-		   }(document));
-		</script>
+		{% include FBLikesScript.html %}
 		<div class="container-fluid" id="wrapper">
+			<h1>
+				JEE-2012 Namewise Results
+			</h1>
+			<div id="header">
+				{% include header.html %}
+			</div>	
+			<!-- <h1>
+						JEE-2012 Allotment List
+			</h1> -->
+			<!-- {% include socialtools.html %} -->
+			<!-- <br><br><br><br><br> -->
+			</ul>
 			<div class="row-fluid">
-				<div id="header">
+				<!-- <div id="header">
 					<ul align="center">
 						<a href="../about.html" target="_blank"><li class="about">About</li></a>
 						<a href="../disclaimer.html" target="_blank"><li class="disclaimer">Disclaimer</li></a>
@@ -55,7 +62,7 @@
 					<h1>
 						JEE-2012 Allotment List
 					</h1>
-				</div>
+				</div> --><br><br>
 				<div id="socialtools">		
 					<div id="fbshare">
 						<a name="fb_share" type="box_count" share_url="http://jee.sdslabs.co/" id="sharebutton" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fjee.sdslabs.co%2F&amp;src=sp" style="text-decoration: none; ">
@@ -73,6 +80,7 @@
 					<div style="margin:0px;" class="fb-like" data-href="https://www.facebook.com/SDSLabs" data-send="true" data-width="550" data-show-faces="true" data-font="trebuchet ms">
 					</div>
 				</div>
+				<br>
 			  	<div class="row-fluid">
 					<div class="span10 well">
 						<form class="form-inline">
@@ -265,12 +273,12 @@
 								</select>
 							</fieldset>
 						</form>
-					</div>
+					</div> <!-- span10 well -->
 					<div class="well span1">
 						~ <span id="results_number">9971</span> records. <br><br>
 						<a href="#" id="refresh" class="btn primary">Loading...</a>
 					</div>
-				</div>
+				</div> <!-- row fluid -->
 				<div class="row-fluid">
 					<table class="table table-striped table-bordered table-condensed">
 						<thead>
@@ -301,5 +309,7 @@
         <script>
             $.getJSON("http://graph.facebook.com/?id=http://jee.sdslabs.co/",function(x){$('.fb_share_count_inner').text(x.shares)})
         </script>
+        <br><br><br><br><br>
+        {% include footer.html %}
 	</body>
 </html>
