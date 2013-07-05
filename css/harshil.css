@@ -1,3 +1,14 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+body {
+	font-family: ubuntu,verdana,sans-serif;
+	color:#464646;
+	background: white;
+	margin: 0px;
+	background-image: url('../img/debut_light.png');
+}
 #socialtootls {
         position: relative;
 }
@@ -81,17 +92,24 @@ a.FBConnectButton_RTL_Small:active{background-position:right -458px}
 .fb_share_size_Large .fb_share_count_right .fb_share_count_inner{font-size:13px;line-height:16px;padding:2px 6px 4px;font-weight:normal;letter-spacing:-1px}
 
 #wrapper {
-	background: white;
-	padding: 10px 20px 30px 20px;
+	/*background: white;*/
+	/*padding: 10px 20px 30px 20px;*/
 	text-align:center;
 }
+.logo {
+	position: absolute;
+	top: 20px;
+	left: 100px;
+}
 
-#header li {
-	font-size: 17px;
+.logo img {
+	width: 140px;
+}
+li {
 	list-style: none;
 	display: inline-block;
-	width: 200px;
-	padding: 12px 0;
+	width: 165px;
+	padding: 10px 0;
 	margin: 0px;
 	color: white;
 	-webkit-transition: all 0.25s ease-in-out;
@@ -101,14 +119,15 @@ a.FBConnectButton_RTL_Small:active{background-position:right -458px}
 	transition: all 0.25s ease-in-out;
 }
 
-#header ul {
-	background-color: black;
-	margin-top: 20px;
+ul {
+	background-color: rgb(71, 145, 194);
+	margin-top: 0px;
+	margin-left: 0px !important;
 	padding: 0px;
-	box-shadow: 0 0 5px black;
+	box-shadow: 0 0 5px rgb(71, 145, 194);
 }
 
-#header li:hover {
+li:hover {
 	-webkit-transition: all 0.25s ease-in-out;
 	-moz-transition: all 0.25s ease-in-out;
 	-o-transition: all 0.25s ease-in-out;
@@ -135,6 +154,23 @@ a.FBConnectButton_RTL_Small:active{background-position:right -458px}
 .graphs:hover {
 	background-color: #7449f1;
 }
+#wrapper {
+	margin-top: 10px;
+	/*width: 100% !important;*/
+}
+#header {
+	padding-left: 0px;
+	margin-left: 0px;
+	/*width: 110% !important;*/
+}
+#header a {
+	color: white;
+	font-size: 1.2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #464646;
+}
 
 .fb-like {
 	margin: 50px;
@@ -148,10 +184,21 @@ a.FBConnectButton_RTL_Small:active{background-position:right -458px}
 	color: red;
 }
 
-h1 {
+/*h1 {
 	padding: 20px 0;
 }
-
+*/
+h1 {
+font-size: 2.5em !important;
+line-height: 25px;
+display: block;
+font-size: 2em;
+-webkit-margin-before: 0.67em;
+-webkit-margin-after: 0.67em;
+-webkit-margin-start: 0px;
+-webkit-margin-end: 0px;
+font-weight: bold;
+}
 
 .row-fluid {
 	font-size: 15px;
