@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% for item in page.meta %}
+		<meta property="og:{{ item.key }}" content="{{ item.value }}"/>
+	{% endfor %}
+	<meta charset="utf-8"/> 
+	<title>{{page.title}}</title>
+	{% for item in page.link %}
+		<link rel="{{ item.rel }}" href="{{ item.href }}">
+	{% endfor %}
+</head>
+<body align="center" lang="en">
+	{{ content }}
+</body>
+</html>

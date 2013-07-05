@@ -2,7 +2,6 @@
 layout: default
 title: JEE Advanced 2013 Results
 year : 2013
-pathtoroot: ./
 meta:
   - key: title
     value: JEE 2013 Ranklist
@@ -28,7 +27,7 @@ meta:
     value: notranslate
 link:
   - rel: stylesheet
-    href: ./css/style.css
+    href: ../../css/style.css
   - rel: shortcut icon
     href: img/favicon.ico
 ---
@@ -70,7 +69,7 @@ link:
 	$.getJSON("http://graph.facebook.com/?id=http://jee.sdslabs.co/",function(x){$('.fb_share_count_inner').text(x.shares)})
 </script>
 <script>
-	$.get('data/list_2013/list_2013.html',function(d){$('#tablecontainer').html(d);});
+	$.get('list_2.html',function(d){$('#tablecontainer').html(d);});
 </script>
 {% include footer.html %}
 <br>
