@@ -4,6 +4,7 @@ body {
 	background: white;
 	margin: 0px;
 	background-image: url('../img/debut_light.png');
+	/*min-width: 1200px;*/
 }
 #socialtootls {
 	position: relative;

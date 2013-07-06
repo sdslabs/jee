@@ -66,11 +66,15 @@ link:
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 <script src="js/lunr.min.js"></script>
 <script src="js/search.js"></script>
+<script src="js/shubham.js"></script>
+
 <script>
 	$.getJSON("http://graph.facebook.com/?id=http://jee.sdslabs.co/",function(x){$('.fb_share_count_inner').text(x.shares)})
 </script>
 <script>
 	$.get('data/list_2013/list_2013.html',function(d){$('#tablecontainer').html(d);});
 </script>
+<script src="{{page.pathtoroot}}js/resize.js"></script>
+
 {% include footer.html %}
 <br>
