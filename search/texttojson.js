@@ -9,9 +9,10 @@ var lazy=require("lazy"),
           var str = line.toString();
           var arr = str.split(",");
           var res = {};
+          res["category"] = arr[3];
           res["rollno"] = arr[2];
           res["name"] = arr[1];
-          res["air"] = arr[0];
+          res["rank"] = arr[0];
           results.push(res);
 
           // console.log(res["air"]+'done');

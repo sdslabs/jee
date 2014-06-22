@@ -4,7 +4,8 @@ var lunr = require('./../js/lunr.min.js'),
 var idx = lunr(function () {
   this.ref('rollno')
   this.field('name')
-  this.field('air')
+  this.field('rank')
+  this.field('category')
 })
 
 fs.readFile('../data/2014/json/results_new.json', function (err, data) {
@@ -16,7 +17,8 @@ fs.readFile('../data/2014/json/results_new.json', function (err, data) {
     return {
       rollno : r.rollno,
       name : r.name,
-      air : r.air
+      rank : r.rank,
+      category : r.category
     }
   })
 
