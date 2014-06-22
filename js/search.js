@@ -36,11 +36,12 @@ $(function(){
 	var input = $('.search-box');
 
 	//Loads the result
-	var href = document.location.href.indexOf('2014')
-	if(href == -1){
-		href = '2013';
+	var href = 'data/2014/json'
+	var index = document.location.href.indexOf('2013')
+	if(index != -1){
+		href = '../data/2013/json';
 	}
-	$.getJSON('/data/' + href + '/json/results_new.json', function (data) {
+	$.getJSON( href + '/results_new.json', function (data) {
 
         //format the raw json into a form that is simpler to work with
         //also a global variable
@@ -54,7 +55,7 @@ $(function(){
      })
 
 	// Loads indexed JSON
-	$.getJSON('/data/' + href + '/json/results_index_new.json', function (indexData) {
+	$.getJSON( href + '/results_index_new.json', function (indexData) {
         console.time("load");
         //Gloabl idx variable
         idx = lunr.Index.load(indexData);
