@@ -36,7 +36,11 @@ $(function(){
 	var input = $('.search-box');
 
 	//Loads the result
-	$.getJSON('/json/results_new.json', function (data) {
+	var href = document.location.href.split('/')[3];
+	if(href.length == 0){
+		href = '2014';
+	}
+	$.getJSON('/data/' + href + '/json/results_new.json', function (data) {
 
         //format the raw json into a form that is simpler to work with
         //also a global variable
@@ -50,7 +54,7 @@ $(function(){
      })
 
 	// Loads indexed JSON
-	$.getJSON('/json/results_index_new.json', function (indexData) {
+	$.getJSON('/data/' + href + '/json/results_index_new.json', function (indexData) {
         console.time("load");
         //Gloabl idx variable
         idx = lunr.Index.load(indexData);

@@ -1,11 +1,11 @@
 ---
 layout: default
 title: JEE Advanced 2014 Results
-year : 2013
+year : 2014
 pathtoroot: ./
 meta:
   - key: title
-    value: JEE 2013 Ranklist
+    value: JEE 2014 Ranklist
   - key: site_name
     value: SDSLabs, IIT Roorkee
   - key: type
@@ -13,15 +13,15 @@ meta:
   - key: url
     value: http//jee.sdslabs.co/
   - key: description
-    value: JEE 2013 complete ranklist compiled by SDSLabs, IIT Roorkee
+    value: JEE 2014 complete ranklist compiled by SDSLabs, IIT Roorkee
   - key: image
     value: http://jee.sdslabs.co/img/logo.png
   - key: fbapp_id
     value: 196618997019945
   - key: Keywords
-    value: jee, iitjee, sdslabs, IIT JEE namewise, JEE Adanced 2013
+    value: jee, iitjee, sdslabs, IIT JEE namewise, JEE Adanced 2014
   - key: sds
-    value: jee-2013-result
+    value: jee-2014-result
   - key: creator
     value: sdslabs, IIT Roorkee
   - key: google
@@ -38,7 +38,7 @@ link:
 {% include FBLikesScript.html %}
 <div id="wrapper">
 	<h1>
-		JEE Advanced 2013 Namewise Results
+		JEE Advanced 2014 Namewise Results
 	</h1>
 
 	<div id="header">
@@ -70,7 +70,7 @@ link:
 	$.getJSON("http://graph.facebook.com/?id=http://jee.sdslabs.co/",function(x){$('.fb_share_count_inner').text(x.shares)})
 </script>
 <script>
-	$.get('data/list_2013/list_2013.html',function(d){$('#tablecontainer').html(d);});
+	$.get('/data/2013/list_2013.html',function(d){$('#tablecontainer').html(d);});
 </script>
 {% include footer.html %}
 <br>

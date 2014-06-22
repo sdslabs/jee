@@ -7,7 +7,11 @@ var idx = lunr(function () {
   this.field('air')
 })
 
-fs.readFile('../json/results_new.json', function (err, data) {
+var href = document.location.href.split('/')[3];
+if(href.length == 0){
+  href = '2014';
+}
+fs.readFile('/data/' + href + '/json/results_new.json', function (err, data) {
   if (err) throw err
 
   var raw = JSON.parse(data)
@@ -26,7 +30,7 @@ fs.readFile('../json/results_new.json', function (err, data) {
     idx.add(result)
   })
 
-  fs.writeFile('../json/results_index_new.json', JSON.stringify(idx), function (err) {
+  fs.writeFile('/data/' + href + '/json/results_index_new.json', JSON.stringify(idx), function (err) {
     if (err) throw err
     console.log('done')
   })
