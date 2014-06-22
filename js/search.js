@@ -49,7 +49,8 @@ $(function(){
           return {
             rollno : raw.rollno,
       		name : raw.name,
-      		air : raw.air
+      		rank : raw.rank,
+      		category : raw.category
           }
       	});
      })
@@ -98,9 +99,9 @@ $(function(){
 	var display = function(results){
 		$('.search-result').html('');
 
-		var html = '<tr><th colspan="3">Results Found: '+ results.length +'</th></tr><tr><th>AIR</th><th>Name</th><th>Roll No</th></tr>';
+		var html = '<tr><th colspan="3">Results Found: '+ results.length +'</th></tr><tr><th>Rank</th><th>Name</th><th>Roll No</th></tr>';
 		for(i in results){
-			html += '<tr><td>' + results[i].air + '</td><td>' + results[i].name + '</td><td>' + results[i].rollno + '</td></tr>';
+			html += '<tr><td>' + results[i].rank + "(" + results[i].category + ")" + '</td><td>' + results[i].name + '</td><td>' + results[i].rollno + '</td></tr>';
 		}
 		$('.search-result').append('<table>'+html+'</table>');
 	}
