@@ -108,7 +108,7 @@ a.FBConnectButton_RTL_Small:active{background-position:right -458px}
 li {
 	list-style: none;
 	display: inline-block;
-	width: 165px;
+	width: 120px;
 	padding: 10px 0;
 	margin: 0px;
 	color: white;
@@ -154,6 +154,11 @@ li:hover {
 .graphs:hover {
 	background-color: #7449f1;
 }
+
+.ranks:hover{
+	background-color: #E3AE57;
+}
+
 #wrapper {
 	margin-top: 10px;
 	/*width: 100% !important;*/

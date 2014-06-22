@@ -118,16 +118,22 @@ table {
 }
 
 th,td {
-	width: 280px;
+	width: 580px;
 	text-align:center;
 	padding-right: 5px;
 	padding-left: 5px;
+}
+tr th,td:first-child{
+	width: 130px;
+}
+tr th,td:last-child{
+	width: 130px;
 }
 
 li {
 	list-style: none;
 	display: inline-block;
-	width: 165px;
+	width: 130px;
 	padding: 10px 0;
 	margin: 0px;
 	color: white;
@@ -173,6 +179,9 @@ li:hover {
 	background-color: #7449f1;
 }
 
+.ranks:hover{
+	background-color: #E3AE57;
+}
 #socialtools{
 	min-height: 65px;
 	margin-top: 50px;
@@ -196,6 +205,7 @@ th a {
 tr:nth-child(even) {
 	background-color: #eeeeee;
 }
+
 a{
 color: rgb(71, 145, 194);
 }

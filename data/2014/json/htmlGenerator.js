@@ -13,7 +13,7 @@ fs.readFile('./results_new.json', function(err, data){
 			 + r.name
 			 + '</td><td>'
 			 + r.rollno
-			 + '</td><tr>';
+			 + '</td></tr>';
 	});
 	fs.writeFile('../list_2014.html', html, function(err){
 		if(err)
