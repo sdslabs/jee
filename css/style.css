@@ -214,6 +214,10 @@ color: rgb(71, 145, 194);
 	margin-right: 5px;
 }
 
+.search-result a {
+	margin-right: 5px;
+}
+
 #fbshare {
 	margin-left: -1200px;
 }
