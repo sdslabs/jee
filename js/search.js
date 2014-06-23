@@ -100,15 +100,15 @@ $(function(){
 		$('.search-result').html('');
 
 		var head = '<tr><th colspan="3">Results Found: '+ results.length +'</th></tr></table>';
-		var cmlHtml = '<table><tr><th colspan="3">Common Merit List</th></tr><tr><th>AIR</th><th>Name</th><th>Roll no</th></tr>'
-		var obcHtml = '<table><tr><th colspan="3">OBC Rank List</th></tr><tr><th>OBC Rank</th><th>Name</th><th>Roll no</th></tr>'
-		var scHtml = '<table><tr><th colspan="3">SC Rank List</th></tr><tr><th>SC Rank</th><th>Name</th><th>Roll no</th></tr>'
-		var stHtml = '<table><tr><th colspan="3">ST Rank List</th></tr><tr><th>ST Rank</th><th>Name</th><th>Roll no</th></tr>'
-		var prepHtml = '<table><tr><th colspan="3">Preparatory Rank List</th></tr><tr><th>Preparatory Rank</th><th>Name</th><th>Roll no</th></tr>'
-		var cmlPwdHtml = '<table><tr><th colspan="3">General(PwD) Rank List</th></tr><tr><th>General (Pwd) Rank</th><th>Name</th><th>Roll no</th></tr>'
-		var obcPwdHtml = '<table><tr><th colspan="3">OBC(PwD) Rank List</th></tr><tr><th>OBC(PwD) Rank</th><th>Name</th><th>Roll no</th></tr>'
-		var scPwdHtml = '<table><tr><th colspan="3">SC(PwD) Rank List</th></tr><tr><th>SC(PwD) Rank</th><th>Name</th><th>Roll no</th></tr>'
-		var stPwdHtml = '<table><tr><th colspan="3">ST(Pwd) Rank List</th></tr><tr><th>ST(PwD) Rank</th><th>Name</th><th>Roll no</th></tr>'
+		var cmlHtml = '<table><tr><th colspan="3"><a name = "cml">Common Merit List</a></th></tr><tr><th>AIR</th><th>Name</th><th>Roll no</th></tr>'
+	var obcHtml = '<table><tr><th colspan="3"><a name = "obc">OBC Rank List</a></th></tr><tr><th>OBC Rank</th><th>Name</th><th>Roll no</th></tr>'
+	var scHtml = '<table><tr><th colspan="3"><a name = "sc">SC Rank List</a></th></tr><tr><th>SC Rank</th><th>Name</th><th>Roll no</th></tr>'
+	var stHtml = '<table><tr><th colspan="3"><a name = "st">ST Rank List</a></th></tr><tr><th>ST Rank</th><th>Name</th><th>Roll no</th></tr>'
+	var prepHtml = '<table><tr><th colspan="3"><a name = "prep">Preparatory Rank List</a></th></tr><tr><th>Preparatory Rank</th><th>Name</th><th>Roll no</th></tr>'
+	var cmlPwdHtml = '<table><tr><th colspan="3"><a name = "cmlPwd">General(PD) Rank List</a></th></tr><tr><th>General (Pwd) Rank</th><th>Name</th><th>Roll no</th></tr>'
+	var obcPwdHtml = '<table><tr><th colspan="3"><a name = "obcPwd">OBC(PD) Rank List</a></th></tr><tr><th>OBC(PwD) Rank</th><th>Name</th><th>Roll no</th></tr>'
+	var scPwdHtml = '<table><tr><th colspan="3"><a name = "scPwd">SC(PD) Rank List</a></th></tr><tr><th>SC(PwD) Rank</th><th>Name</th><th>Roll no</th></tr>'
+	var stPwdHtml = '<table><tr><th colspan="3"><a name = "stPwd">ST(Pd) Rank List</a></th></tr><tr><th>ST(PwD) Rank</th><th>Name</th><th>Roll no</th></tr>'
 		console.log("R");
 		var cml = 0, obc = 0, sc = 0, st = 0, prep = 0, cmlPwd = 0, obcPwd = 0, scPwd = 0, stPwd = 0;
 		for(i in results){
@@ -162,27 +162,55 @@ $(function(){
 		}
 
 		var content = head;
+		var links = "";
 
 		if(cml!=0)
+		{
 			content += cmlHtml + "</table>";
+			links += "<a href = '#cml'>CML</a>";
+		}
 		if(obc!=0)
+		{
 			content += obcHtml + "</table>";
+			links += "<a href = '#obc'>OBC</a>";
+		}
 		if(sc!=0)
+		{
 			content += scHtml + "</table>";
+			links += "<a href = '#sc'>SC</a>";
+		}
 		if(st!=0)
+		{
 			content += stHtml + "</table>";
+			links += "<a href = '#st'>ST</a>";
+		}
 		if(prep!=0)
+		{
 			content += prepHtml + "</table>";
+			links += "<a href = '#prep'>Preparatory</a>";
+		}
 		if(cmlPwd!=0)
+		{
 			content += cmlPwdHtml + "</table>";
+			links += "<a href = '#cmlPwd'>General(PD)</a>";
+		}
 		if(obcPwd!=0)
+		{
 			content += obcPwdHtml + "</table>";
+			links += "<a href = '#obcPwd'>OBC(PD)</a>";
+		}
 		if(scPwd!=0)
+		{
 			content += scPwdHtml + "</table>";
+			links += "<a href = '#scPwd'>SC(PD)</a>";
+		}
 		if(stPwd!=0)
+		{
 			content += stPwdHtml + "</table>";
+			links += "<a href = '#stPwd'>ST(PD)</a>";
+		}
 
-		$('.search-result').append('<table>'+content+'</table>');
+		$('.search-result').append(links + '<table>'+content+'</table>');
 	}
 
 	
