@@ -101,15 +101,14 @@ $(function(){
 
 		var head = '<tr><th colspan="3">Results Found: '+ results.length +'</th></tr></table>';
 		var cmlHtml = '<table><tr><th colspan="3"><a name = "cml">Common Merit List</a></th></tr><tr><th>AIR</th><th>Name</th><th>Roll no</th></tr>'
-	var obcHtml = '<table><tr><th colspan="3"><a name = "obc">OBC Rank List</a></th></tr><tr><th>OBC Rank</th><th>Name</th><th>Roll no</th></tr>'
-	var scHtml = '<table><tr><th colspan="3"><a name = "sc">SC Rank List</a></th></tr><tr><th>SC Rank</th><th>Name</th><th>Roll no</th></tr>'
-	var stHtml = '<table><tr><th colspan="3"><a name = "st">ST Rank List</a></th></tr><tr><th>ST Rank</th><th>Name</th><th>Roll no</th></tr>'
-	var prepHtml = '<table><tr><th colspan="3"><a name = "prep">Preparatory Rank List</a></th></tr><tr><th>Preparatory Rank</th><th>Name</th><th>Roll no</th></tr>'
-	var cmlPwdHtml = '<table><tr><th colspan="3"><a name = "cmlPwd">General(PD) Rank List</a></th></tr><tr><th>General (Pd) Rank</th><th>Name</th><th>Roll no</th></tr>'
-	var obcPwdHtml = '<table><tr><th colspan="3"><a name = "obcPwd">OBC(PD) Rank List</a></th></tr><tr><th>OBC(PD) Rank</th><th>Name</th><th>Roll no</th></tr>'
-	var scPwdHtml = '<table><tr><th colspan="3"><a name = "scPwd">SC(PD) Rank List</a></th></tr><tr><th>SC(PD) Rank</th><th>Name</th><th>Roll no</th></tr>'
-	var stPwdHtml = '<table><tr><th colspan="3"><a name = "stPwd">ST(Pd) Rank List</a></th></tr><tr><th>ST(PD) Rank</th><th>Name</th><th>Roll no</th></tr>'
-		console.log("R");
+		var obcHtml = '<table><tr><th colspan="3"><a name = "obc">OBC Rank List</a></th></tr><tr><th>OBC Rank</th><th>Name</th><th>Roll no</th></tr>'
+		var scHtml = '<table><tr><th colspan="3"><a name = "sc">SC Rank List</a></th></tr><tr><th>SC Rank</th><th>Name</th><th>Roll no</th></tr>'
+		var stHtml = '<table><tr><th colspan="3"><a name = "st">ST Rank List</a></th></tr><tr><th>ST Rank</th><th>Name</th><th>Roll no</th></tr>'
+		var prepHtml = '<table><tr><th colspan="3"><a name = "prep">Preparatory Rank List</a></th></tr><tr><th>Preparatory Rank</th><th>Name</th><th>Roll no</th></tr>'
+		var cmlPwdHtml = '<table><tr><th colspan="3"><a name = "cmlPwd">General(PD) Rank List</a></th></tr><tr><th>General (Pd) Rank</th><th>Name</th><th>Roll no</th></tr>'
+		var obcPwdHtml = '<table><tr><th colspan="3"><a name = "obcPwd">OBC(PD) Rank List</a></th></tr><tr><th>OBC(PD) Rank</th><th>Name</th><th>Roll no</th></tr>'
+		var scPwdHtml = '<table><tr><th colspan="3"><a name = "scPwd">SC(PD) Rank List</a></th></tr><tr><th>SC(PD) Rank</th><th>Name</th><th>Roll no</th></tr>'
+		var stPwdHtml = '<table><tr><th colspan="3"><a name = "stPwd">ST(Pd) Rank List</a></th></tr><tr><th>ST(PD) Rank</th><th>Name</th><th>Roll no</th></tr>'
 		var cml = 0, obc = 0, sc = 0, st = 0, prep = 0, cmlPwd = 0, obcPwd = 0, scPwd = 0, stPwd = 0;
 		for(i in results){
 			var html = '<tr><td>' + results[i].rank + '</td><td>' + results[i].name + '</td><td>' + results[i].rollno + '</td></tr>';
