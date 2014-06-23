@@ -114,7 +114,7 @@ h1, h2, h3, h4, h5, h6 {
 
 table {
 	border: 2px solid #dadada;
-	margin-bottom: 40px;
+	margin-top: 40px;
 }
 
 th,td {
@@ -208,6 +208,10 @@ tr:nth-child(even) {
 
 a{
 color: rgb(71, 145, 194);
+}
+
+#tablecontainer a {
+	margin-right: 5px;
 }
 
 #fbshare {
