@@ -40,20 +40,38 @@ $(function(){
 	var index = document.location.href.indexOf('2013')
 	if(index != -1){
 		href = '../data/2013/json';
-	}
-	$.getJSON( href + '/results_new.json', function (data) {
 
-        //format the raw json into a form that is simpler to work with
-        //also a global variable
-        results = data.results.map(function (raw) {
-          return {
-            rollno : raw.rollno,
-      		name : raw.name,
-      		rank : raw.rank,
-      		category : raw.category
-          }
-      	});
-     })
+		// Loading json file for 2013
+		$.getJSON( href + '/results_new.json', function (data) {
+
+	        //format the raw json into a form that is simpler to work with
+	        //also a global variable
+	        results = data.results.map(function (raw) {
+	          return {
+	            rollno : raw.rollno,
+	      		name : raw.name,
+	      		air : raw.air
+	          }
+	      	});
+	     })
+	}
+	else
+	{
+		// Different format for year 2014
+		$.getJSON( href + '/results_new.json', function (data) {
+
+	        //format the raw json into a form that is simpler to work with
+	        //also a global variable
+	        results = data.results.map(function (raw) {
+	          return {
+	            rollno : raw.rollno,
+	      		name : raw.name,
+	      		rank : raw.rank,
+	      		category : raw.category
+	          }
+	      	});
+	     })
+	}
 
 	// Loads indexed JSON
 	$.getJSON( href + '/results_index_new.json', function (indexData) {
@@ -80,7 +98,18 @@ $(function(){
 			if (res.length==0)
 				$('.search-result').html('Sorry, no results found!');
 			else
-				display(res);
+			{
+				if(index!=-1)
+				{	
+					// 2013
+					display2013(res);
+				}
+				else
+				{
+					// 2014
+					display2014(res);
+				}
+			}
 		}
 		else {
 			$('#tablecontainer').show();
@@ -96,7 +125,17 @@ $(function(){
 		}
 	});
 
-	var display = function(results){
+	var display2013 = function(results){
+		$('.search-result').html('');
+
+		var html = '<tr><th colspan="3">Results Found: '+ results.length +'</th></tr><tr><th>AIR</th><th>Name</th><th>Roll No</th></tr>';
+		for(i in results){
+			html += '<tr><td>' + results[i].air + '</td><td>' + results[i].name + '</td><td>' + results[i].rollno + '</td></tr>';
+		}
+		$('.search-result').append('<table>'+html+'</table>');
+	}
+
+	var display2014 = function(results){
 		$('.search-result').html('');
 
 		var head = '<tr><th colspan="3">Results Found: '+ results.length +'</th></tr></table>';
