@@ -9,6 +9,7 @@
 	{% for item in page.link %}
 		<link rel="{{ item.rel }}" href="{{ item.href }}">
 	{% endfor %}
+	{% include googleanalytics.html %}
 </head>
 <body align="center" lang="en">
 	{{ content }}

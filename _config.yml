@@ -1,1 +1,3 @@
 permalink: /:year/:title
+# Change to development for local changes
+mode: production
