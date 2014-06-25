@@ -1,4 +1,4 @@
-##IIT JEE 2012 Listings 
+##IIT JEE 2014 Listings 
 This listing was prepared by SDSLabs, IIT Roorkee. 
 SDSLabs is a group of students in IIT-Roorkee working on the forefront of innovation and new technology.
 We know you're here for the JEE listing. Go on [here](http://jee.sdslabs.co).
@@ -8,7 +8,7 @@ We know you're here for the JEE listing. Go on [here](http://jee.sdslabs.co).
 [![Creative Commons
 License](http://i.creativecommons.org/l/by-nc-nd/3.0/88x31.png)](http://creativecommons.org/licenses/by-nc-nd/3.0/)
 
-IIT JEE 2012 Listings by [SDSLabs](http://jee.sdslabs.co/) is licensed under a
+IIT JEE 2014 Listings by [SDSLabs](http://jee.sdslabs.co/) is licensed under a
 [Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported
 License](http://creativecommons.org/licenses/by-nc-nd/3.0/).
 
