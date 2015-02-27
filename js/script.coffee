@@ -144,7 +144,6 @@ requirejs(['jquery','d3','text!../data/course.csv'],($,d3=window.d3,CoursesCSV)-
             <td title=\"#{course2 ? ''}\">#{alloted2 ? ' - ' }</td>
             <td title=\"#{course3 ? ''}\">#{alloted3 ? ' - ' }</td>
             <td>#{center ? "N/A"}</td>
-            <td>#{marks}</td>
             <td>#{user.sex}</td>
           </tr>"
       html
