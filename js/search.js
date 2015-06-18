@@ -36,7 +36,9 @@ $(function(){
 	var input = $('.search-box');
 
 	//Loads the result
-	var href = 'data/2014/json'
+	var href = 'data/2015/json';
+	if(document.location.href.indexOf('2014') != -1)
+		href = '../data/2014/json';
 	var index = document.location.href.indexOf('2013')
 	if(index != -1){
 		href = '../data/2013/json';
@@ -57,7 +59,7 @@ $(function(){
 	}
 	else
 	{
-		// Different format for year 2014
+		// Different format for year 2014 and 2015
 		$.getJSON( href + '/results_new.json', function (data) {
 
 	        //format the raw json into a form that is simpler to work with

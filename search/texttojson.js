@@ -19,7 +19,7 @@ var lazy=require("lazy"),
         }).on('pipe', function(){
           console.log(results[0]);
 
-          fs.writeFile('../data/2014/json/results_new.json', JSON.stringify({'results':results}), function (err) {
+          fs.writeFile('../data/2015/json/results_new.json', JSON.stringify({'results':results}), function (err) {
             if (err) throw err
             console.log('done')
           })
