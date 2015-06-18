@@ -89,7 +89,7 @@ a.FBConnectButton_RTL_Small:active{background-position:right -458px}
 
 .logo {
 	position: absolute;
-	top: 20px;
+	top: 30px;
 	left: 100px;
 }
 
@@ -146,7 +146,7 @@ li {
 
 ul {
 	background-color: rgb(71, 145, 194);
-	margin-top: -10px;;
+	/*margin-top: -10px;*/
 	padding: 0px;
 	box-shadow: 0 0 5px rgb(71, 145, 194);
 }
