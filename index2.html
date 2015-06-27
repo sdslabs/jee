@@ -1,0 +1,75 @@
+---
+layout: default
+title: JEE Advanced 2015 Results
+year : 2015
+pathtoroot: ./
+meta:
+  - key: title
+    value: JEE 2015 Ranklist
+  - key: site_name
+    value: SDSLabs, IIT Roorkee
+  - key: type
+    value: website
+  - key: url
+    value: https://jee.sdslabs.co/
+  - key: description
+    value: JEE 2015 partial ranklist compiled by SDSLabs, IIT Roorkee
+  - key: image
+    value: https://jee.sdslabs.co/img/logo.png
+  - key: fbapp_id
+    value: 196618997019945
+  - key: Keywords
+    value: jee, iitjee, sdslabs, IIT JEE namewise, JEE Advanced 2014
+  - key: sds
+    value: jee-2015-result
+  - key: creator
+    value: sdslabs, IIT Roorkee
+  - key: google
+    value: notranslate
+link:
+  - rel: stylesheet
+    href: ./css/style.css
+  - rel: shortcut icon
+    href: img/favicon.ico
+---
+<!-- Content
+    ================================================== -->
+<div id="fb-root"></div>
+{% include FBLikesScript.html %}
+<div id="wrapper">
+	<h1>
+		JEE Advanced 2015 Namewise Results
+	</h1>
+	<div id="header">
+		{% include header.html %}
+	</div>
+	<div id="socialtools">
+		{% include socialtools.html %}
+	</div>
+	<div id="container">
+
+			<h4 style="font-weight: 300;font-size: 0.9em;">
+				{% include disclaimerSmall.html %}
+			</h4>
+				<div class="search-wrap">
+					<input type="search" class="search-box" placeholder="Enter Name / AIR"><input type="submit" value="Search" class="search-submit">
+					<div class="search-result"></div>
+				</div>
+
+				<div class="notranslate" align="center" id="tablecontainer">Please wait, loading results...</div>
+			<br>
+			
+		</div>
+
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script src="js/lunr.min.js"></script>
+<script src="js/search.js"></script>
+<script>
+	$.getJSON("http://graph.facebook.com/?id=http://jee.sdslabs.co/",function(x){$('.fb_share_count_inner').text(x.shares)})
+</script>
+<script>
+	$.get('data/2015/list_2015.html',function(d){$('#tablecontainer').html(d);});
+</script>
+{% include footer.html %}
+<br>
